@@ -16,6 +16,10 @@
 		2D98C7DD218734E50017E50A /* RecipeCatalogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D98C7DC218734E50017E50A /* RecipeCatalogTests.swift */; };
 		2D98C7E8218734E50017E50A /* RecipeCatalogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D98C7E7218734E50017E50A /* RecipeCatalogUITests.swift */; };
 		2D98C7FB2187434C0017E50A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D98C7FA2187434C0017E50A /* GoogleService-Info.plist */; };
+		2DC5005F218764D100C661CC /* RequestsToFireBaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC5005E218764D100C661CC /* RequestsToFireBaseFactory.swift */; };
+		2DC500612187699A00C661CC /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC500602187699A00C661CC /* Category.swift */; };
+		2DC500632187817F00C661CC /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC500622187817F00C661CC /* Ingredient.swift */; };
+		2DC500652187819D00C661CC /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC500642187819D00C661CC /* Recipe.swift */; };
 		8960EA4D179BE0934E1C49EE /* Pods_RecipeCatalogTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 742DCCDE18B87320D70D055E /* Pods_RecipeCatalogTests.framework */; };
 		89F9C9045768C4298B4CAD61 /* Pods_RecipeCatalog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 483DE6E8A2BB9212C01FD3A1 /* Pods_RecipeCatalog.framework */; };
 /* End PBXBuildFile section */
@@ -54,6 +58,10 @@
 		2D98C7E7218734E50017E50A /* RecipeCatalogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCatalogUITests.swift; sourceTree = "<group>"; };
 		2D98C7E9218734E50017E50A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D98C7FA2187434C0017E50A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2DC5005E218764D100C661CC /* RequestsToFireBaseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsToFireBaseFactory.swift; sourceTree = "<group>"; };
+		2DC500602187699A00C661CC /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		2DC500622187817F00C661CC /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		2DC500642187819D00C661CC /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		330A4985754DA40BDEA7AC4D /* Pods-RecipeCatalog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipeCatalog.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RecipeCatalog/Pods-RecipeCatalog.debug.xcconfig"; sourceTree = "<group>"; };
 		4795F59C5FF476A2F7E822B9 /* Pods_RecipeCatalogUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecipeCatalogUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		483DE6E8A2BB9212C01FD3A1 /* Pods_RecipeCatalog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecipeCatalog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +124,7 @@
 		2D98C7C6218734E50017E50A /* RecipeCatalog */ = {
 			isa = PBXGroup;
 			children = (
+				2DC5005D218763EB00C661CC /* Network */,
 				2D98C7F5218734EE0017E50A /* Model */,
 				2D98C7F82187350D0017E50A /* Storyboards */,
 				2D98C7F7218735040017E50A /* Controllers */,
@@ -145,6 +154,9 @@
 		2D98C7F5218734EE0017E50A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2DC500602187699A00C661CC /* Category.swift */,
+				2DC500622187817F00C661CC /* Ingredient.swift */,
+				2DC500642187819D00C661CC /* Recipe.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -183,6 +195,14 @@
 				2D98C7D3218734E50017E50A /* Info.plist */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		2DC5005D218763EB00C661CC /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				2DC5005E218764D100C661CC /* RequestsToFireBaseFactory.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		71306C190A5AFA0754ECD843 /* Pods */ = {
@@ -425,8 +445,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DC5005F218764D100C661CC /* RequestsToFireBaseFactory.swift in Sources */,
 				2D98C7CA218734E50017E50A /* ViewController.swift in Sources */,
 				2D98C7C8218734E50017E50A /* AppDelegate.swift in Sources */,
+				2DC500652187819D00C661CC /* Recipe.swift in Sources */,
+				2DC500632187817F00C661CC /* Ingredient.swift in Sources */,
+				2DC500612187699A00C661CC /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -604,7 +628,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = RecipeCatalog/Supporting/Settings/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = BB.RecipeCatalog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -619,7 +646,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = RecipeCatalog/Supporting/Settings/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = BB.RecipeCatalog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -635,7 +665,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = RecipeCatalogTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = BB.RecipeCatalogTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -652,7 +686,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = RecipeCatalogTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = BB.RecipeCatalogTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -668,7 +706,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = RecipeCatalogUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = BB.RecipeCatalogUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -684,7 +726,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = RecipeCatalogUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = BB.RecipeCatalogUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
