@@ -8,39 +8,33 @@
 
 import UIKit
 
-class RecipesTableViewController: UITableViewController {
+final class RecipesTableViewController: UITableViewController {
 
-    
     //MARK: - Constants
-    
     //Заглушка для картинок
-    let imageArr = [UIImage(named: "iconsRec"),
+    private let imageArr = [UIImage(named: "iconsRec"),
                     UIImage(named: "iconsRec2"),
                     UIImage(named: "iconsRec3")]
     
     //MARK: - Variables
-    
     //внедрение делегата по работе с фаербезом
     lazy var delegateWorkWithFirebase: RequestsToFireBaseFactory = NetworkBornFactory().makeRequestsToFireBase()
-    var arrayCat = [Category]()
-    var arrayRec = [Recipe]()
+    private var arrayCat = [Category]()
+    private var arrayRec = [Recipe]()
     
     //MARK: - Outlets
-    
-    @IBOutlet var recipeTable: UITableView!
+    @IBOutlet weak var recipeTable: UITableView!
     
     //MARK: - LifeStyle ViewController
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        recipeTable.backgroundColor = hexStringToUIColor(hex: "#95C595")
+        recipeTable.backgroundColor = UIColor.backgroundColor
         
         workwithFireBase()
     }
     
     //MARK: - Private methods
-    
     //подгрузка данных из firebase
     private func workwithFireBase(){
         delegateWorkWithFirebase.takeListOfRecipes { [weak self] (recipes) in
@@ -53,32 +47,8 @@ class RecipesTableViewController: UITableViewController {
             self?.recipeTable.reloadData()
         }
     }
-    
-    //преобразование цыета из hex
-    private func hexStringToUIColor (hex:String) -> UIColor {
-        var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
-        
-        if (cString.hasPrefix("#")) {
-            cString.remove(at: cString.startIndex)
-        }
-        
-        if ((cString.count) != 6) {
-            return UIColor.gray
-        }
-        
-        var rgbValue:UInt32 = 0
-        Scanner(string: cString).scanHexInt32(&rgbValue)
-        
-        return UIColor(
-            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
-            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
-            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
-            alpha: CGFloat(1.0)
-        )
-    }
 
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         
         return 1
