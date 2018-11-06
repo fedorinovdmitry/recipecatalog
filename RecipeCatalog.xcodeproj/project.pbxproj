@@ -24,6 +24,8 @@
 		2DC500612187699A00C661CC /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC500602187699A00C661CC /* Category.swift */; };
 		2DC500632187817F00C661CC /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC500622187817F00C661CC /* Ingredient.swift */; };
 		2DC500652187819D00C661CC /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC500642187819D00C661CC /* Recipe.swift */; };
+		4916A59D21920B64006FBF53 /* RequestsDownloadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916A59C21920B64006FBF53 /* RequestsDownloadImage.swift */; };
+		4916A5A021921C45006FBF53 /* NetworkBornFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916A59F21921C45006FBF53 /* NetworkBornFactory.swift */; };
 		8960EA4D179BE0934E1C49EE /* Pods_RecipeCatalogTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 742DCCDE18B87320D70D055E /* Pods_RecipeCatalogTests.framework */; };
 		89F9C9045768C4298B4CAD61 /* Pods_RecipeCatalog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 483DE6E8A2BB9212C01FD3A1 /* Pods_RecipeCatalog.framework */; };
 /* End PBXBuildFile section */
@@ -73,6 +75,8 @@
 		330A4985754DA40BDEA7AC4D /* Pods-RecipeCatalog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipeCatalog.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RecipeCatalog/Pods-RecipeCatalog.debug.xcconfig"; sourceTree = "<group>"; };
 		4795F59C5FF476A2F7E822B9 /* Pods_RecipeCatalogUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecipeCatalogUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		483DE6E8A2BB9212C01FD3A1 /* Pods_RecipeCatalog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecipeCatalog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4916A59C21920B64006FBF53 /* RequestsDownloadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsDownloadImage.swift; sourceTree = "<group>"; };
+		4916A59F21921C45006FBF53 /* NetworkBornFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkBornFactory.swift; sourceTree = "<group>"; };
 		742DCCDE18B87320D70D055E /* Pods_RecipeCatalogTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecipeCatalogTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74E8B7176EB48E1F0A3EBA87 /* Pods-RecipeCatalogUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipeCatalogUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RecipeCatalogUITests/Pods-RecipeCatalogUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8A8E191D8A9C4D677D3DCAC9 /* Pods-RecipeCatalogTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipeCatalogTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RecipeCatalogTests/Pods-RecipeCatalogTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -237,6 +241,8 @@
 			isa = PBXGroup;
 			children = (
 				2DC5005E218764D100C661CC /* RequestsToFireBaseFactory.swift */,
+				4916A59C21920B64006FBF53 /* RequestsDownloadImage.swift */,
+				4916A59F21921C45006FBF53 /* NetworkBornFactory.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -421,6 +427,8 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-RecipeCatalog/Pods-RecipeCatalog-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -428,6 +436,8 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -489,7 +499,9 @@
 				0292AF112189A8EB00A6A4DB /* CategoryTableViewController.swift in Sources */,
 				2DC500652187819D00C661CC /* Recipe.swift in Sources */,
 				0292AF0F2189A89500A6A4DB /* CategoryTableViewCell.swift in Sources */,
+				4916A59D21920B64006FBF53 /* RequestsDownloadImage.swift in Sources */,
 				2DC500632187817F00C661CC /* Ingredient.swift in Sources */,
+				4916A5A021921C45006FBF53 /* NetworkBornFactory.swift in Sources */,
 				2DC500612187699A00C661CC /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

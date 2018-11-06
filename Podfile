@@ -8,6 +8,7 @@ target 'RecipeCatalog' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
+  pod 'AlamofireImage', '~> 3.4'
 
   target 'RecipeCatalogTests' do
     inherit! :search_paths
