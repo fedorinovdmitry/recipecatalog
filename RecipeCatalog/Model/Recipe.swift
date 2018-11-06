@@ -8,7 +8,7 @@
 
 import Foundation
 import Firebase
-
+//TODO: сделать хренение параметра объектом с запросом к бд
 /** Модель объекта Рецепт, создается по приходяшему с FireBase json */
 struct Recipe {
     
@@ -18,6 +18,7 @@ struct Recipe {
     let id: Int
     let title: String
     let text: String
+    let complexity: Int
     var arrayIdOfCategories: [Int]? = nil
     var arrayIdParameters: [(Int,String)]? = nil
     
@@ -28,6 +29,7 @@ struct Recipe {
         id = json["id"] as! Int
         title = json["title"] as! String
         text = json["text"] as! String
+        complexity = json["complexity"] as! Int
         arrayIdOfCategories = self.getArrayofId(categories: json["idCategories"] as! [String:AnyObject])
         arrayIdParameters = self.getArrayofId(parameters: json["idParameters"] as! [String:AnyObject])
     }

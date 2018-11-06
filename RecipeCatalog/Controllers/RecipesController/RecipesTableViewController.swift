@@ -10,6 +10,7 @@ import UIKit
 
 final class RecipesTableViewController: UITableViewController {
 
+    
     //MARK: - Constants
     //Заглушка для картинок
     private let imageArr = [UIImage(named: "iconsRec"),
@@ -35,9 +36,10 @@ final class RecipesTableViewController: UITableViewController {
     }
     
     //MARK: - Private methods
-    //подгрузка данных из firebase
+    ///подгрузка данных из firebase
     private func workwithFireBase(){
         delegateWorkWithFirebase.takeListOfRecipes { [weak self] (recipes) in
+            
             self?.arrayRec = recipes
             //            for recipe in (self?.arrayRec)! {
             //                print("id - \(recipe.id) title - \(recipe.title)")
@@ -46,6 +48,17 @@ final class RecipesTableViewController: UITableViewController {
             //            }
             self?.recipeTable.reloadData()
         }
+    }
+    ///конфигурация ячейки
+    /// - indexPath - номер ячейки
+    /// - cell - сама ячейка
+    private func configureCell(with indexPath:Int, cell:RecipesTableViewCell) -> RecipesTableViewCell {
+        let recipe = arrayRec[indexPath]
+        cell.recipeNameCell.text = recipe.title
+        cell.imageViewCell.image = imageArr[indexPath]
+        cell.complexity.text = "Сложность рецепта - " + String(recipe.complexity)
+        
+        return cell
     }
 
     // MARK: - Table view data source
@@ -62,9 +75,9 @@ final class RecipesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecipesCell", for: indexPath) as! RecipesTableViewCell
         
-        cell.recipeNameCell.text = arrayRec[indexPath.row].title
-        cell.imageViewCell.image = imageArr[indexPath.row]
-
-        return cell
+        return configureCell(with: indexPath.row, cell: cell)
     }
+    
+    
+    
 }

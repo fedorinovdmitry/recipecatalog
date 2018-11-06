@@ -16,6 +16,7 @@ class RecipesTableViewCell: UITableViewCell {
     @IBOutlet weak var imageViewCell: UIImageView!
     @IBOutlet weak var recipeNameCell: UILabel!
     @IBOutlet weak var ingredientsNamesCell: UILabel!
+    @IBOutlet weak var complexity: UILabel!
     
     //MARK: - CellConfig
     override func awakeFromNib() {
