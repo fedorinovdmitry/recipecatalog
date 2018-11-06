@@ -63,7 +63,7 @@
                                     <outlet property="contentViewCell" destination="lM2-Az-ofa" id="Fne-j9-WkF"/>
                                     <outlet property="imageCell" destination="zTT-0S-lS2" id="nCV-Uc-D9i"/>
                                     <outlet property="labelCell" destination="MAR-wf-Xcc" id="5P6-gg-1uW"/>
-                                    <segue destination="eNa-fP-dTt" kind="show" id="806-uf-TgL"/>
+                                    <segue destination="eNa-fP-dTt" kind="show" identifier="toListOfRecipe" id="806-uf-TgL"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
