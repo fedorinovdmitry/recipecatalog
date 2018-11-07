@@ -49,6 +49,22 @@ extension UIColor {
 }
 
 extension UIColor {
-    static let backgroundColor = UIColor(hexString: "#95C595")
-    static let backgroundCellColor = UIColor(hexString: "#7BDE7B")
+    //light
+    
+//    static let backgroundColor = UIColor(hexString: "#95C595")
+//    static let backgroundCellColor = UIColor(hexString: "#7BDE7B")
+//    static let backgroundButtonColor = UIColor(hexString: "#67A967")
+//    static let backgroundNavigationColor = UIColor(hexString: "#8BE48B")
+//    static let themTextColor = UIColor.black
+    //dark
+    static let backgroundColor = UIColor(hexString: "#2E3032")
+    static let backgroundCellColor = UIColor(hexString: "#45484B")
+    static let backgroundButtonColor = UIColor(hexString: "#616569")
+    static let backgroundNavigationColor = UIColor(hexString: "#3F4346")
+    static let themTextColor = UIColor(hexString: "#C3C3C3")
+    
+    static let darkBackgroundColor = UIColor(hexString: "#2E3032")
+    static let darkBackgroundCellColor = UIColor(hexString: "#45484B")
+    static let darkBackgroundButtonColor = UIColor(hexString: "#616569")
+    static let darkBackgroundNavigationColor = UIColor(hexString: "#3F4346")
 }
