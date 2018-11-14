@@ -24,8 +24,11 @@ class ImageRecipeTableViewCell: UITableViewCell {
         
         imageViewCell.layer.masksToBounds = true
         imageViewCell.layer.cornerRadius = radius
+        
+        maskViewCell.layer.shadowOpacity = 0.4
+        maskViewCell.layer.shadowRadius = 5
+        maskViewCell.layer.shadowOffset = CGSize(width: 0, height: 4)
     }
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,7 +38,6 @@ class ImageRecipeTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        
     }
     
     //MARK: - Methods
@@ -44,5 +46,4 @@ class ImageRecipeTableViewCell: UITableViewCell {
         imegeContentCell.backgroundColor = UIColor.backgroundColor
         maskViewCell.backgroundColor = UIColor.backgroundCellColor
     }
-
 }

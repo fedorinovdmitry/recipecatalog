@@ -20,6 +20,12 @@ class RecipesTableViewCell: UITableViewCell {
     @IBOutlet weak var ingredientsNamesCell: UILabel!
     @IBOutlet weak var complexity: UILabel!
     
+    @IBOutlet weak var beer1: UIImageView!
+    @IBOutlet weak var beer2: UIImageView!
+    @IBOutlet weak var beer3: UIImageView!
+    @IBOutlet weak var beer4: UIImageView!
+    @IBOutlet weak var beer5: UIImageView!
+    
     
     //MARK: - CellConfig
     
@@ -38,6 +44,10 @@ class RecipesTableViewCell: UITableViewCell {
         
         imageViewCell.layer.masksToBounds = true
         imageViewCell.layer.cornerRadius = radius
+        
+        maskViewCell.layer.shadowOpacity = 0.4
+        maskViewCell.layer.shadowRadius = 5
+        maskViewCell.layer.shadowOffset = CGSize(width: 0, height: 4)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

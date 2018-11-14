@@ -23,6 +23,10 @@ class IngridientsTableViewCell: UITableViewCell {
         
         maskViewCell.layer.cornerRadius = radius
         addToBasketButtonCell.layer.cornerRadius = buttonRadius
+        
+        maskViewCell.layer.shadowOpacity = 0.4
+        maskViewCell.layer.shadowRadius = 5
+        maskViewCell.layer.shadowOffset = CGSize(width: 0, height: 4)
     }
     
     override func awakeFromNib() {

@@ -8,12 +8,11 @@
 
 import UIKit
 
-final class RecipesTableViewController: UITableViewController {
+class RecipesTableViewController: UIViewController {
     
     //MARK: - Public Properties
     
     var idCategory: String? = nil
-    
     
     //MARK: - Variables
     
@@ -25,24 +24,20 @@ final class RecipesTableViewController: UITableViewController {
     private var arrayCat = [Category]()
     private var arrayRec = [Recipe]()
     
-    
     //MARK: - Outlets
     
     @IBOutlet weak var recipeTable: UITableView!
     
-    
+    @IBOutlet weak var findButton: UIButton!
     //MARK: - LifeStyle ViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         
         recipeTable.backgroundColor = UIColor.backgroundColor
+        findButton.createFloatingActionButton()
         
         workwithFireBase()
-        
-        
-        
     }
-    
     
     //MARK: - Private methods
     
@@ -54,7 +49,6 @@ final class RecipesTableViewController: UITableViewController {
                 self?.recipeTable.reloadData()
             }
         }
-
     }
     
     ///конфигурация ячейки
@@ -69,30 +63,65 @@ final class RecipesTableViewController: UITableViewController {
                 cell.imageViewCell.image = image
             }
         }
-        cell.complexity.text = "Сложность рецепта - " + String(recipe.complexity)
+        
+        //TODO: - убрать этот мусор
+        //Ето костыль, не ругайте меня больно
+        switch recipe.complexity {
+        case 1:
+            cell.beer1.image = UIImage(named: "ActiveDarkBeer")
+        case 2:
+            cell.beer1.image = UIImage(named: "ActiveDarkBeer")
+            cell.beer2.image = UIImage(named: "ActiveDarkBeer")
+        case 3:
+            cell.beer1.image = UIImage(named: "ActiveDarkBeer")
+            cell.beer2.image = UIImage(named: "ActiveDarkBeer")
+            cell.beer3.image = UIImage(named: "ActiveDarkBeer")
+        case 4:
+            cell.beer1.image = UIImage(named: "ActiveDarkBeer")
+            cell.beer2.image = UIImage(named: "ActiveDarkBeer")
+            cell.beer3.image = UIImage(named: "ActiveDarkBeer")
+            cell.beer4.image = UIImage(named: "ActiveDarkBeer")
+        case 5:
+            cell.beer1.image = UIImage(named: "ActiveDarkBeer")
+            cell.beer2.image = UIImage(named: "ActiveDarkBeer")
+            cell.beer3.image = UIImage(named: "ActiveDarkBeer")
+            cell.beer4.image = UIImage(named: "ActiveDarkBeer")
+            cell.beer5.image = UIImage(named: "ActiveDarkBeer")
+        default:
+            print("Oooops")
+        }
+        
+        
+//        cell.complexity.text = "Сложность рецепта - " + String(recipe.complexity)
+
+        
         return cell
     }
+}
 
-    
+extension RecipesTableViewController: UITableViewDataSource {
+
     // MARK: - Table view data source
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         
         return 1
     }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return arrayRec.count
     }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecipesCell", for: indexPath) as! RecipesTableViewCell
         
         return configureCell(with: indexPath.row, cell: cell)
+
     }
     
-    
-    
+}
+
+extension RecipesTableViewController: UITabBarDelegate{
     
 }
