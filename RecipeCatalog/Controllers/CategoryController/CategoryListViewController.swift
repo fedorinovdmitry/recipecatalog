@@ -1,16 +1,15 @@
 //
-//  CategoryTableViewController.swift
+//  CategoryListViewController.swift
 //  RecipeCatalog
 //
-//  Created by Артем Чурсин on 31/10/2018.
+//  Created by Артем Чурсин on 12/11/2018.
 //  Copyright © 2018 BezBab. All rights reserved.
 //
 
 import UIKit
 
-final class CategoryTableViewController: UITableViewController {
-    
-    
+class CategoryListViewController: UIViewController {
+
     //MARK: - Private Properties
     
     //внедрение делегата по работе с фаербезом
@@ -21,10 +20,14 @@ final class CategoryTableViewController: UITableViewController {
     private var arrayCat = [Category]()
     private var arrayRec = [Recipe]()
     
+    private var roundButton = UIButton()
+    
     
     //MARK: - Outlets
     
     @IBOutlet weak var categoryTable: UITableView!
+    
+    @IBOutlet weak var findButton: UIButton!
     
     
     //MARK: - LifeStyle ViewController
@@ -39,8 +42,9 @@ final class CategoryTableViewController: UITableViewController {
         delegateWorkWithFirebase.takeListOfRecipes(idCategory: "102") { (array) in
             print(array)
         }
+        
+        findButton.createFloatingActionButton()
     }
-    
     
     //MARK: - Private methods
     
@@ -68,35 +72,40 @@ final class CategoryTableViewController: UITableViewController {
         cell.labelCell.text = arrayCat[indexPath].title
         return cell
     }
-    
-    
-    // MARK: - Table view data source
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
+
+}
+extension CategoryListViewController: UITableViewDataSource{
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return arrayCat.count
     }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath) as! CategoryTableViewCell
         
         return configCell(with: indexPath.row, cell: cell)
     }
     
-    
-    //MARK: - Navigation
-    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "toListOfRecipe" {
+//            let destination = segue.destination as? RecipesTableViewController
+//            if let selectedRow = categoryTable.indexPathForSelectedRow?.row {
+//                destination?.idCategory = arrayCat[selectedRow].id
+//            }
+//        }
+//    }
+}
+extension CategoryListViewController: UITableViewDelegate{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toListOfRecipe" {
             let destination = segue.destination as? RecipesTableViewController
-            if let selectedRow = tableView.indexPathForSelectedRow?.row {
+            if let selectedRow = categoryTable.indexPathForSelectedRow?.row {
                 destination?.idCategory = arrayCat[selectedRow].id
             }
         }
     }
 }
-
