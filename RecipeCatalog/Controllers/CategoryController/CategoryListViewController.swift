@@ -22,24 +22,17 @@ class CategoryListViewController: UIViewController {
     
     private var roundButton = UIButton()
     
-    
     //MARK: - Outlets
-    
     @IBOutlet weak var categoryTable: UITableView!
-    
     @IBOutlet weak var findButton: UIButton!
     
-    
     //MARK: - LifeStyle ViewController
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        categoryTable.backgroundColor = UIColor.backgroundColor
         categoryTable.backgroundColor = ThemAppearance.backgroundColor.uiColor()
         
         workwithFireBase()
-        
         delegateWorkWithFirebase.takeListOfRecipes(idCategory: "102") { (array) in
             print(array)
         }
@@ -48,7 +41,6 @@ class CategoryListViewController: UIViewController {
     }
     
     //MARK: - Private methods
-    
     private func workwithFireBase(){
         // вывод листа категорий
         delegateWorkWithFirebase.takeListOfCategory { [weak self] (categories) in
@@ -75,6 +67,7 @@ class CategoryListViewController: UIViewController {
     }
 
 }
+
 extension CategoryListViewController: UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -90,16 +83,8 @@ extension CategoryListViewController: UITableViewDataSource{
         
         return configCell(with: indexPath.row, cell: cell)
     }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "toListOfRecipe" {
-//            let destination = segue.destination as? RecipesTableViewController
-//            if let selectedRow = categoryTable.indexPathForSelectedRow?.row {
-//                destination?.idCategory = arrayCat[selectedRow].id
-//            }
-//        }
-//    }
 }
+
 extension CategoryListViewController: UITableViewDelegate{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toListOfRecipe" {

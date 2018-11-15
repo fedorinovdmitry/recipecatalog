@@ -49,10 +49,8 @@ struct SchemeColor {
         print(set)
         if set == true{
             option = .LIGHT
-            print("secondIFL")
         }
         else{
-            print("secondIFD")
             option = .DARK
         }
         return colorWith(scheme: option)
@@ -73,7 +71,6 @@ struct SchemeColor {
     }
 }
 
-
 struct ThemAppearance {
     
     static let backgroundColor = SchemeColor(light: LightPalette.backgroundColor,
@@ -92,32 +89,3 @@ enum ColorSchemeOption {
     case DARK
     case LIGHT
 }
-
-//final class ColorScheme {
-//
-//    // MARK: - Properties
-//    static let shared = ColorScheme()
-//
-//    var option: ColorSchemeOption
-//    let userDefaults = UserDefaults.standard
-//
-//    let flag = false
-//    // MARK: - Initialization
-//    init() {
-//        if let settings = userDefaults.string(forKey: "Them") {
-//            print("firstIFL")
-//            if settings == "Light"{
-//                self.option = .LIGHT
-//                print("secondIFL")
-//            }
-//            else{
-//                print("secondIFD")
-//                self.option = .DARK
-//            }
-//        }
-//        else{
-//            print("firstIFD")
-//            self.option = .DARK
-//        }
-//    }
-//}

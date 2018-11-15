@@ -19,7 +19,6 @@ class RecipeMainConrollerTableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         recipeTable.backgroundColor = ThemAppearance.backgroundColor.uiColor()
-//        recipeTable.backgroundColor = UIColor.backgroundColor
     }
     
     //MARK: - Private methods

@@ -12,7 +12,6 @@ extension UIButton {
     
     func createFloatingActionButton() {
         
-//        backgroundColor = UIColor.backgroundButtonColor
         backgroundColor = ThemAppearance.backgroundButtonColor.uiColor()
         layer.cornerRadius = frame.width / 2
         layer.shadowOpacity = 0.25

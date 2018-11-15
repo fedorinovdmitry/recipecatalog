@@ -49,13 +49,6 @@ class IngridientsTableViewCell: UITableViewCell {
         addToBasketButtonCell.backgroundColor = ThemAppearance.backgroundButtonColor.uiColor()
         
         titleLableCell.textColor = ThemAppearance.textColor.uiColor()
-        
-//        contentCell.backgroundColor = UIColor.backgroundColor
-//        maskViewCell.backgroundColor = UIColor.backgroundCellColor
-//        lineViewCell.backgroundColor = UIColor.themTextColor
-//        addToBasketButtonCell.backgroundColor = UIColor.backgroundButtonColor
-//
-//        titleLableCell.textColor = UIColor.themTextColor
     }
 
 }

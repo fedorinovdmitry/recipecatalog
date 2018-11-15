@@ -11,11 +11,9 @@ import UIKit
 class RecipesTableViewController: UIViewController {
     
     //MARK: - Public Properties
-    
     var idCategory: String? = nil
     
     //MARK: - Variables
-    
     //внедрение делегата по работе с фаербезом
     lazy var delegateWorkWithFirebase = NetworkBornFactory().makeRequestsToFireBase()
     //внедрение делегата по работе с Аламофаером
@@ -25,15 +23,13 @@ class RecipesTableViewController: UIViewController {
     private var arrayRec = [Recipe]()
     
     //MARK: - Outlets
-    
     @IBOutlet weak var recipeTable: UITableView!
-    
     @IBOutlet weak var findButton: UIButton!
+    
     //MARK: - LifeStyle ViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        recipeTable.backgroundColor = UIColor.backgroundColor
         recipeTable.backgroundColor = ThemAppearance.backgroundColor.uiColor()
         
         findButton.createFloatingActionButton()
@@ -42,7 +38,6 @@ class RecipesTableViewController: UIViewController {
     }
     
     //MARK: - Private methods
-    
     ///подгрузка данных из firebase
     private func workwithFireBase() {
         if let id = idCategory {
@@ -65,10 +60,12 @@ class RecipesTableViewController: UIViewController {
                 cell.imageViewCell.image = image
             }
         }
-        
-        //TODO: - убрать этот мусор
-        //Ето костыль, не ругайте меня больно
-        switch recipe.complexity {
+        complexitySwitch(complexity: recipe.complexity, cell: cell)
+        return cell
+    }
+    
+    private func complexitySwitch(complexity: Int, cell: RecipesTableViewCell) {
+        switch complexity {
         case 1:
             cell.beer1.image = UIImage(named: "ActiveDarkBeer")
         case 2:
@@ -92,21 +89,13 @@ class RecipesTableViewController: UIViewController {
         default:
             print("Oooops")
         }
-        
-        
-//        cell.complexity.text = "Сложность рецепта - " + String(recipe.complexity)
-
-        
-        return cell
     }
 }
 
 extension RecipesTableViewController: UITableViewDataSource {
-
     // MARK: - Table view data source
-    
     func numberOfSections(in tableView: UITableView) -> Int {
-        
+    
         return 1
     }
     
@@ -119,9 +108,7 @@ extension RecipesTableViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecipesCell", for: indexPath) as! RecipesTableViewCell
         
         return configureCell(with: indexPath.row, cell: cell)
-
     }
-    
 }
 
 extension RecipesTableViewController: UITabBarDelegate{
