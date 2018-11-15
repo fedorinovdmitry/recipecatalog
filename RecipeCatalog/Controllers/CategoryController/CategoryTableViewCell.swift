@@ -36,18 +36,15 @@ class CategoryTableViewCell: UITableViewCell {
         backgroundCellMask.layer.shadowOpacity = 0.4
         backgroundCellMask.layer.shadowRadius = 5
         backgroundCellMask.layer.shadowOffset = CGSize(width: 0, height: 4)
-
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
     }
     
     //MARK: - Methods
     func cellBuilder() {
         
-//        contentViewCell.backgroundColor = UIColor.backgroundColor
         contentViewCell.backgroundColor = ThemAppearance.backgroundColor.uiColor()
     }
 }

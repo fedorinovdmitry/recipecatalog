@@ -11,6 +11,8 @@
 		021C7105219AE54900E5137C /* UIButtonExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021C7104219AE54900E5137C /* UIButtonExtention.swift */; };
 		021C7108219C0CC200E5137C /* ThemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021C7107219C0CC200E5137C /* ThemsViewController.swift */; };
 		021C710C219D8DD700E5137C /* ColorShame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021C710B219D8DD700E5137C /* ColorShame.swift */; };
+		021C710F219DEDB400E5137C /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021C710E219DEDB400E5137C /* Font.swift */; };
+		021C7111219DEFCD00E5137C /* Calibri Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 021C7110219DEFCD00E5137C /* Calibri Italic.ttf */; };
 		024C1F662192F49A00C69999 /* RecipeMainConrollerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024C1F652192F49A00C69999 /* RecipeMainConrollerTableViewController.swift */; };
 		024C1F682192F4BA00C69999 /* ImageRecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024C1F672192F4BA00C69999 /* ImageRecipeTableViewCell.swift */; };
 		024C1F6A2192F4F500C69999 /* IngridientsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024C1F692192F4F500C69999 /* IngridientsTableViewCell.swift */; };
@@ -60,6 +62,8 @@
 		021C7104219AE54900E5137C /* UIButtonExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtention.swift; sourceTree = "<group>"; };
 		021C7107219C0CC200E5137C /* ThemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemsViewController.swift; sourceTree = "<group>"; };
 		021C710B219D8DD700E5137C /* ColorShame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorShame.swift; sourceTree = "<group>"; };
+		021C710E219DEDB400E5137C /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		021C7110219DEFCD00E5137C /* Calibri Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calibri Italic.ttf"; sourceTree = "<group>"; };
 		024C1F652192F49A00C69999 /* RecipeMainConrollerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeMainConrollerTableViewController.swift; sourceTree = "<group>"; };
 		024C1F672192F4BA00C69999 /* ImageRecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRecipeTableViewCell.swift; sourceTree = "<group>"; };
 		024C1F692192F4F500C69999 /* IngridientsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngridientsTableViewCell.swift; sourceTree = "<group>"; };
@@ -133,6 +137,15 @@
 				021C7107219C0CC200E5137C /* ThemsViewController.swift */,
 			);
 			path = ThemsViewController;
+			sourceTree = "<group>";
+		};
+		021C710D219DED4D00E5137C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				021C7110219DEFCD00E5137C /* Calibri Italic.ttf */,
+				021C710E219DEDB400E5137C /* Font.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		024C1F642192F44000C69999 /* RecipeMainController */ = {
@@ -238,6 +251,7 @@
 		2D98C7F6218734F70017E50A /* Supporting */ = {
 			isa = PBXGroup;
 			children = (
+				021C710D219DED4D00E5137C /* Resources */,
 				02945766218B0A2D00326796 /* extension */,
 				2D98C7F9218735390017E50A /* Settings */,
 				2D98C7C7218734E50017E50A /* AppDelegate.swift */,
@@ -421,6 +435,7 @@
 				2D98C7D2218734E50017E50A /* LaunchScreen.storyboard in Resources */,
 				2D98C7FB2187434C0017E50A /* GoogleService-Info.plist in Resources */,
 				2D98C7CF218734E50017E50A /* Assets.xcassets in Resources */,
+				021C7111219DEFCD00E5137C /* Calibri Italic.ttf in Resources */,
 				2D98C7CD218734E50017E50A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -533,6 +548,7 @@
 			files = (
 				024C1F662192F49A00C69999 /* RecipeMainConrollerTableViewController.swift in Sources */,
 				2DC5005F218764D100C661CC /* RequestsToFireBaseFactory.swift in Sources */,
+				021C710F219DEDB400E5137C /* Font.swift in Sources */,
 				2D98C7C8218734E50017E50A /* AppDelegate.swift in Sources */,
 				024C1F6A2192F4F500C69999 /* IngridientsTableViewCell.swift in Sources */,
 				021C710C219D8DD700E5137C /* ColorShame.swift in Sources */,

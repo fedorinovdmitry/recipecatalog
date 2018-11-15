@@ -45,8 +45,5 @@ class ImageRecipeTableViewCell: UITableViewCell {
 
         imegeContentCell.backgroundColor = ThemAppearance.backgroundColor.uiColor()
         maskViewCell.backgroundColor = ThemAppearance.backgroundCellColor.uiColor()
-        
-//        imegeContentCell.backgroundColor = UIColor.backgroundColor
-//        maskViewCell.backgroundColor = UIColor.backgroundCellColor
     }
 }

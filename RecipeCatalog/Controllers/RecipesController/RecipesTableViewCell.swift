@@ -12,7 +12,6 @@ class RecipesTableViewCell: UITableViewCell {
 
     
     //MARK: - Outlets
-    
     @IBOutlet weak var contentCell: UIView!
     @IBOutlet weak var maskViewCell: UIView!
     @IBOutlet weak var imageViewCell: UIImageView!
@@ -28,7 +27,6 @@ class RecipesTableViewCell: UITableViewCell {
     
     
     //MARK: - CellConfig
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -54,14 +52,9 @@ class RecipesTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
 
-    
     //MARK: - Methods
-    
     func cellBuilder() {
-        
         contentCell.backgroundColor = ThemAppearance.backgroundColor.uiColor()
         maskViewCell.backgroundColor = ThemAppearance.backgroundCellColor.uiColor()
-//        contentCell.backgroundColor = UIColor.backgroundColor
-//        maskViewCell.backgroundColor = UIColor.backgroundCellColor
     }
 }

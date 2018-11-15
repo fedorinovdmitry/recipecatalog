@@ -60,18 +60,6 @@ class RecipeTableViewCell: UITableViewCell {
         
         timerLableCell.textColor = ThemAppearance.textColor.uiColor()
         titleLableCell.textColor = ThemAppearance.textColor.uiColor()
-        recipetLableCell.textColor = ThemAppearance.textColor.uiColor()
-
-        
-//        contentCell.backgroundColor = UIColor.backgroundColor
-//        maskViewCell.backgroundColor = UIColor.backgroundCellColor
-//
-//        beginStopButton.backgroundColor = UIColor.backgroundButtonColor
-//        pauseButton.backgroundColor = UIColor.backgroundButtonColor
-//
-//        timerLableCell.textColor = UIColor.themTextColor
-//        titleLableCell.textColor = UIColor.themTextColor
-//        recipetLableCell.textColor = UIColor.themTextColor
-        
+        recipetLableCell.textColor = ThemAppearance.textColor.uiColor() 
     }
 }

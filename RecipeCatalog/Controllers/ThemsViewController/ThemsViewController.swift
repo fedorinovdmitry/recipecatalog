@@ -8,10 +8,9 @@
 
 import UIKit
 
-class ThemsViewController: UIViewController {
+final class ThemsViewController: UIViewController {
     
     //MARK: - Constants
-    
     let userDefaults = UserDefaults.standard
     
     //MARK: - Outlets
@@ -25,137 +24,91 @@ class ThemsViewController: UIViewController {
     
     @IBOutlet weak var welcomaLable: UILabel!
     @IBOutlet weak var chooseLable: UILabel!
-    @IBOutlet var backgroundView: UIView!
+    @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var applyButton: UIButton!
     
+    @IBOutlet weak var welcomeLableConstraint: NSLayoutConstraint!
     //MARK: - LifeStyle ViewController
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        makeInterface()
+        
+        applyButton.isEnabled = false
+    }
+    
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
         applyButton.layer.cornerRadius = 20
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-//        //временный мусор
-//        let backgroundColor = UIColor(hexString: "#95C595")
-//        let backgroundButtonColor = UIColor(hexString: "#67A967")
-//        let themTextColor = UIColor.black
-//
-//        backgroundView.backgroundColor = backgroundColor
-//        applyButton.backgroundColor = backgroundButtonColor
-//        applyButton.tintColor = themTextColor
-//        welcomaLable.textColor = themTextColor
-//        chooseLable.textColor = themTextColor
-
-        makeInterface()
-        
-        applyButton.isEnabled = false
-    }
-    
     //MARK: - Methods
     
     @IBAction func handleTap(_ sender: Any) {
         
-        if heightLightImage.constant < 350 && heightDarkImadge.constant < 350
-        {
-            heightLightImage.constant = heightLightImage.constant * 1.5
-            widthLightImage.constant = widthLightImage.constant * 1.5
+        if heightLightImage.constant < 350 && heightDarkImadge.constant < 350 {
             
-            lightImage.layer.zPosition = 2
-            darkImadge.layer.zPosition = 1
-            
-            userDefaults.set(true, forKey: "Them")
-            
-            makeInterface()
-
-            applyButton.isEnabled = true
+            startPosition(mainHeightConstraint: &heightLightImage.constant, mainWeightConstraint: &widthLightImage.constant, secondHeightConstraint: &heightDarkImadge.constant, secondWeightConstraint: &weightDarkImadge.constant, mainImadge: &lightImage.layer.zPosition, secondImadge: &darkImadge.layer.zPosition, them: true)
         }
-        else if heightLightImage.constant < 350 && heightDarkImadge.constant > 350{
-            heightLightImage.constant = heightLightImage.constant * 1.5
-            widthLightImage.constant = widthLightImage.constant * 1.5
-            
-            heightDarkImadge.constant = 348.0
-            weightDarkImadge.constant = 160.7
-            
-            lightImage.layer.zPosition = 2
-            darkImadge.layer.zPosition = 1
-            
-            userDefaults.set(true, forKey: "Them")
-            
-            makeInterface()
-//            makeLightInterface()
-            applyButton.isEnabled = true
+        else if heightLightImage.constant < 350 && heightDarkImadge.constant > 350 {
+         
+            afterPosition(mainHeightConstraint: &heightLightImage.constant, mainWeightConstraint: &widthLightImage.constant, secondHeightConstraint: &heightDarkImadge.constant, secondWeightConstraint: &weightDarkImadge.constant, mainImadge: &lightImage.layer.zPosition, secondImadge: &darkImadge.layer.zPosition, them: true)
         }
-        
         UIView.animate(withDuration: 0.3){
             self.view.layoutIfNeeded()
         }
     }
     
     @IBAction func handelDarkTap(_ sender: Any) {
-        if heightLightImage.constant < 350 && heightDarkImadge.constant < 350
-        {
-            heightDarkImadge.constant = heightDarkImadge.constant * 1.5
-            weightDarkImadge.constant = weightDarkImadge.constant * 1.5
+       if heightLightImage.constant < 350 && heightDarkImadge.constant < 350 {
+       
+        startPosition(mainHeightConstraint: &heightDarkImadge.constant, mainWeightConstraint: &weightDarkImadge.constant, secondHeightConstraint: &heightLightImage.constant, secondWeightConstraint: &widthLightImage.constant, mainImadge: &darkImadge.layer.zPosition, secondImadge: &lightImage.layer.zPosition, them: false)
             
-            darkImadge.layer.zPosition = 2
-            lightImage.layer.zPosition = 1
-            
-            userDefaults.set(false, forKey: "Them")
-//            makeDarkInterface()
-            makeInterface()
-            applyButton.isEnabled = true
         }
-        else if heightLightImage.constant > 350 && heightDarkImadge.constant < 350{
-            heightDarkImadge.constant = heightDarkImadge.constant * 1.5
-            weightDarkImadge.constant = weightDarkImadge.constant * 1.5
-            
-            heightLightImage.constant = 348.0
-            widthLightImage.constant = 160.7
-            
-            darkImadge.layer.zPosition = 2
-            lightImage.layer.zPosition = 1
-            
-            userDefaults.set(false, forKey: "Them")
-//            makeDarkInterface()
-            makeInterface()
-            applyButton.isEnabled = true
+        else if heightLightImage.constant > 350 && heightDarkImadge.constant < 350 {
+        afterPosition(mainHeightConstraint: &heightDarkImadge.constant, mainWeightConstraint: &weightDarkImadge.constant, secondHeightConstraint: &heightLightImage.constant, secondWeightConstraint: &widthLightImage.constant, mainImadge: &darkImadge.layer.zPosition, secondImadge: &lightImage.layer.zPosition, them: false)
         }
-        
         UIView.animate(withDuration: 0.3){
             self.view.layoutIfNeeded()
         }
     }
     
-//    // Заглушка
-//    private func makeDarkInterface() {
-//
-//        //временный мусор
-//        let backgroundColor = UIColor(hexString: "#2E3032")
-//        let backgroundButtonColor = UIColor(hexString: "#616569")
-//        let themTextColor = UIColor(hexString: "#C3C3C3")
-//
-//        backgroundView.backgroundColor = backgroundColor
-//        applyButton.backgroundColor = backgroundButtonColor
-//        applyButton.tintColor = themTextColor
-//        welcomaLable.textColor = themTextColor
-//        chooseLable.textColor = themTextColor
-//    }
-//
-//    private func makeLightInterface() {
-//        //временный мусор
-//        let backgroundColor = UIColor(hexString: "#95C595")
-//        let backgroundButtonColor = UIColor(hexString: "#67A967")
-//        let themTextColor = UIColor.black
-//
-//        backgroundView.backgroundColor = backgroundColor
-//        applyButton.backgroundColor = backgroundButtonColor
-//        applyButton.tintColor = themTextColor
-//        welcomaLable.textColor = themTextColor
-//        chooseLable.textColor = themTextColor
-//    }
+    //MARK: - Private methods
+    private func startPosition(mainHeightConstraint: inout CGFloat, mainWeightConstraint: inout CGFloat, secondHeightConstraint: inout CGFloat, secondWeightConstraint: inout CGFloat,  mainImadge: inout CGFloat, secondImadge: inout CGFloat, them: Bool){
+        
+        mainHeightConstraint = mainHeightConstraint * 1.5
+        mainWeightConstraint = mainWeightConstraint * 1.5
+        
+        secondHeightConstraint = secondHeightConstraint / 2
+        secondWeightConstraint = secondWeightConstraint / 2
+        
+        mainImadge = 2
+        secondImadge = 1
+        
+        userDefaults.set(them, forKey: "Them")
+        makeInterface()
+        welcomeLableConstraint.constant = welcomeLableConstraint.constant - 100
+        applyButton.isEnabled = true
+    }
+    
+    private func afterPosition(mainHeightConstraint: inout CGFloat, mainWeightConstraint: inout CGFloat, secondHeightConstraint: inout CGFloat, secondWeightConstraint: inout CGFloat, mainImadge: inout CGFloat, secondImadge: inout CGFloat, them: Bool){
+        
+        mainHeightConstraint = 348.0 * 1.5
+        mainWeightConstraint = 160.7 * 1.5
+        
+        secondHeightConstraint = 348.0 / 2
+        secondWeightConstraint = 160.7 / 2
+        
+        mainImadge = 2
+        secondImadge = 1
+        
+        userDefaults.set(them, forKey: "Them")
+        
+        makeInterface()
+        applyButton.isEnabled = true
+    }
+    
     private func makeInterface() {
         backgroundView.backgroundColor = ThemAppearance.backgroundColor.uiColor()
         applyButton.backgroundColor = ThemAppearance.backgroundButtonColor.uiColor()
@@ -163,5 +116,4 @@ class ThemsViewController: UIViewController {
         welcomaLable.textColor = ThemAppearance.textColor.uiColor()
         chooseLable.textColor = ThemAppearance.textColor.uiColor()
     }
-    
 }
