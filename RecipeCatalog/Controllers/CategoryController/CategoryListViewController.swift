@@ -35,7 +35,8 @@ class CategoryListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        categoryTable.backgroundColor = UIColor.backgroundColor
+//        categoryTable.backgroundColor = UIColor.backgroundColor
+        categoryTable.backgroundColor = ThemAppearance.backgroundColor.uiColor()
         
         workwithFireBase()
         

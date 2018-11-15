@@ -59,7 +59,9 @@ class RecipesTableViewCell: UITableViewCell {
     
     func cellBuilder() {
         
-        contentCell.backgroundColor = UIColor.backgroundColor
-        maskViewCell.backgroundColor = UIColor.backgroundCellColor
+        contentCell.backgroundColor = ThemAppearance.backgroundColor.uiColor()
+        maskViewCell.backgroundColor = ThemAppearance.backgroundCellColor.uiColor()
+//        contentCell.backgroundColor = UIColor.backgroundColor
+//        maskViewCell.backgroundColor = UIColor.backgroundCellColor
     }
 }

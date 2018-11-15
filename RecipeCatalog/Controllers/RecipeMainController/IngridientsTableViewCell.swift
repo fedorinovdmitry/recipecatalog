@@ -42,13 +42,20 @@ class IngridientsTableViewCell: UITableViewCell {
     
     //MARK: - Methods
     func cellBuilder() {
+
+        contentCell.backgroundColor = ThemAppearance.backgroundColor.uiColor()
+        maskViewCell.backgroundColor = ThemAppearance.backgroundCellColor.uiColor()
+        lineViewCell.backgroundColor = ThemAppearance.textColor.uiColor()
+        addToBasketButtonCell.backgroundColor = ThemAppearance.backgroundButtonColor.uiColor()
         
-        contentCell.backgroundColor = UIColor.backgroundColor
-        maskViewCell.backgroundColor = UIColor.backgroundCellColor
-        lineViewCell.backgroundColor = UIColor.themTextColor
-        addToBasketButtonCell.backgroundColor = UIColor.backgroundButtonColor
+        titleLableCell.textColor = ThemAppearance.textColor.uiColor()
         
-        titleLableCell.textColor = UIColor.themTextColor
+//        contentCell.backgroundColor = UIColor.backgroundColor
+//        maskViewCell.backgroundColor = UIColor.backgroundCellColor
+//        lineViewCell.backgroundColor = UIColor.themTextColor
+//        addToBasketButtonCell.backgroundColor = UIColor.backgroundButtonColor
+//
+//        titleLableCell.textColor = UIColor.themTextColor
     }
 
 }

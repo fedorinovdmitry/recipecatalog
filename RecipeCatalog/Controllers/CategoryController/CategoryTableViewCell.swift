@@ -47,6 +47,7 @@ class CategoryTableViewCell: UITableViewCell {
     //MARK: - Methods
     func cellBuilder() {
         
-        contentViewCell.backgroundColor = UIColor.backgroundColor
+//        contentViewCell.backgroundColor = UIColor.backgroundColor
+        contentViewCell.backgroundColor = ThemAppearance.backgroundColor.uiColor()
     }
 }
