@@ -33,7 +33,9 @@ class RecipesTableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        recipeTable.backgroundColor = UIColor.backgroundColor
+//        recipeTable.backgroundColor = UIColor.backgroundColor
+        recipeTable.backgroundColor = ThemAppearance.backgroundColor.uiColor()
+        
         findButton.createFloatingActionButton()
         
         workwithFireBase()

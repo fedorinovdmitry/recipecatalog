@@ -10,6 +10,10 @@ import UIKit
 
 class ThemsViewController: UIViewController {
     
+    //MARK: - Constants
+    
+    let userDefaults = UserDefaults.standard
+    
     //MARK: - Outlets
     @IBOutlet weak var lightImage: UIImageView!
     @IBOutlet weak var heightLightImage: NSLayoutConstraint!
@@ -34,16 +38,18 @@ class ThemsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //временный мусор
-        let backgroundColor = UIColor(hexString: "#95C595")
-        let backgroundButtonColor = UIColor(hexString: "#67A967")
-        let themTextColor = UIColor.black
-        
-        backgroundView.backgroundColor = backgroundColor
-        applyButton.backgroundColor = backgroundButtonColor
-        applyButton.tintColor = themTextColor
-        welcomaLable.textColor = themTextColor
-        chooseLable.textColor = themTextColor
+//        //временный мусор
+//        let backgroundColor = UIColor(hexString: "#95C595")
+//        let backgroundButtonColor = UIColor(hexString: "#67A967")
+//        let themTextColor = UIColor.black
+//
+//        backgroundView.backgroundColor = backgroundColor
+//        applyButton.backgroundColor = backgroundButtonColor
+//        applyButton.tintColor = themTextColor
+//        welcomaLable.textColor = themTextColor
+//        chooseLable.textColor = themTextColor
+
+        makeInterface()
         
         applyButton.isEnabled = false
     }
@@ -60,7 +66,10 @@ class ThemsViewController: UIViewController {
             lightImage.layer.zPosition = 2
             darkImadge.layer.zPosition = 1
             
-            makeLightInterface()
+            userDefaults.set(true, forKey: "Them")
+            
+            makeInterface()
+
             applyButton.isEnabled = true
         }
         else if heightLightImage.constant < 350 && heightDarkImadge.constant > 350{
@@ -73,7 +82,10 @@ class ThemsViewController: UIViewController {
             lightImage.layer.zPosition = 2
             darkImadge.layer.zPosition = 1
             
-            makeLightInterface()
+            userDefaults.set(true, forKey: "Them")
+            
+            makeInterface()
+//            makeLightInterface()
             applyButton.isEnabled = true
         }
         
@@ -91,7 +103,9 @@ class ThemsViewController: UIViewController {
             darkImadge.layer.zPosition = 2
             lightImage.layer.zPosition = 1
             
-            makeDarkInterface()
+            userDefaults.set(false, forKey: "Them")
+//            makeDarkInterface()
+            makeInterface()
             applyButton.isEnabled = true
         }
         else if heightLightImage.constant > 350 && heightDarkImadge.constant < 350{
@@ -104,7 +118,9 @@ class ThemsViewController: UIViewController {
             darkImadge.layer.zPosition = 2
             lightImage.layer.zPosition = 1
             
-            makeDarkInterface()
+            userDefaults.set(false, forKey: "Them")
+//            makeDarkInterface()
+            makeInterface()
             applyButton.isEnabled = true
         }
         
@@ -113,31 +129,39 @@ class ThemsViewController: UIViewController {
         }
     }
     
-    // Заглушка
-    private func makeDarkInterface() {
-
-        //временный мусор
-        let backgroundColor = UIColor(hexString: "#2E3032")
-        let backgroundButtonColor = UIColor(hexString: "#616569")
-        let themTextColor = UIColor(hexString: "#C3C3C3")
-        
-        backgroundView.backgroundColor = backgroundColor
-        applyButton.backgroundColor = backgroundButtonColor
-        applyButton.tintColor = themTextColor
-        welcomaLable.textColor = themTextColor
-        chooseLable.textColor = themTextColor
+//    // Заглушка
+//    private func makeDarkInterface() {
+//
+//        //временный мусор
+//        let backgroundColor = UIColor(hexString: "#2E3032")
+//        let backgroundButtonColor = UIColor(hexString: "#616569")
+//        let themTextColor = UIColor(hexString: "#C3C3C3")
+//
+//        backgroundView.backgroundColor = backgroundColor
+//        applyButton.backgroundColor = backgroundButtonColor
+//        applyButton.tintColor = themTextColor
+//        welcomaLable.textColor = themTextColor
+//        chooseLable.textColor = themTextColor
+//    }
+//
+//    private func makeLightInterface() {
+//        //временный мусор
+//        let backgroundColor = UIColor(hexString: "#95C595")
+//        let backgroundButtonColor = UIColor(hexString: "#67A967")
+//        let themTextColor = UIColor.black
+//
+//        backgroundView.backgroundColor = backgroundColor
+//        applyButton.backgroundColor = backgroundButtonColor
+//        applyButton.tintColor = themTextColor
+//        welcomaLable.textColor = themTextColor
+//        chooseLable.textColor = themTextColor
+//    }
+    private func makeInterface() {
+        backgroundView.backgroundColor = ThemAppearance.backgroundColor.uiColor()
+        applyButton.backgroundColor = ThemAppearance.backgroundButtonColor.uiColor()
+        applyButton.tintColor = ThemAppearance.textColor.uiColor()
+        welcomaLable.textColor = ThemAppearance.textColor.uiColor()
+        chooseLable.textColor = ThemAppearance.textColor.uiColor()
     }
     
-    private func makeLightInterface() {
-        //временный мусор
-        let backgroundColor = UIColor(hexString: "#95C595")
-        let backgroundButtonColor = UIColor(hexString: "#67A967")
-        let themTextColor = UIColor.black
-        
-        backgroundView.backgroundColor = backgroundColor
-        applyButton.backgroundColor = backgroundButtonColor
-        applyButton.tintColor = themTextColor
-        welcomaLable.textColor = themTextColor
-        chooseLable.textColor = themTextColor
-    }
 }

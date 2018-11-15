@@ -51,16 +51,27 @@ class RecipeTableViewCell: UITableViewCell {
     
     //MARK: - Methods
     func cellBuilder() {
+
+        contentCell.backgroundColor = ThemAppearance.backgroundColor.uiColor()
+        maskViewCell.backgroundColor = ThemAppearance.backgroundCellColor.uiColor()
         
-        contentCell.backgroundColor = UIColor.backgroundColor
-        maskViewCell.backgroundColor = UIColor.backgroundCellColor
+        beginStopButton.backgroundColor = ThemAppearance.backgroundButtonColor.uiColor()
+        pauseButton.backgroundColor = ThemAppearance.backgroundButtonColor.uiColor()
         
-        beginStopButton.backgroundColor = UIColor.backgroundButtonColor
-        pauseButton.backgroundColor = UIColor.backgroundButtonColor
+        timerLableCell.textColor = ThemAppearance.textColor.uiColor()
+        titleLableCell.textColor = ThemAppearance.textColor.uiColor()
+        recipetLableCell.textColor = ThemAppearance.textColor.uiColor()
+
         
-        timerLableCell.textColor = UIColor.themTextColor
-        titleLableCell.textColor = UIColor.themTextColor
-        recipetLableCell.textColor = UIColor.themTextColor
+//        contentCell.backgroundColor = UIColor.backgroundColor
+//        maskViewCell.backgroundColor = UIColor.backgroundCellColor
+//
+//        beginStopButton.backgroundColor = UIColor.backgroundButtonColor
+//        pauseButton.backgroundColor = UIColor.backgroundButtonColor
+//
+//        timerLableCell.textColor = UIColor.themTextColor
+//        titleLableCell.textColor = UIColor.themTextColor
+//        recipetLableCell.textColor = UIColor.themTextColor
         
     }
 }
