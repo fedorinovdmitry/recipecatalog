@@ -13,10 +13,21 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    var rootController: UINavigationController {
+        window?.rootViewController = NavigationCategoryViewController()
+        window?.rootViewController?.view.backgroundColor = .red
+        return window?.rootViewController as! NavigationCategoryViewController
+    }
+    
+    fileprivate lazy var coordinator: Coordinatable = self.makeCoordinator()
+    
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        
+        coordinator.start()
         return true
     }
 
@@ -44,4 +55,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
-
+private extension AppDelegate {
+    func makeCoordinator() -> Coordinatable {
+        return AppCoordinator(router: Router(rootController: rootController),
+                              factory: CoordinatorFactory())
+    }
+}

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gH8-M8-zVv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="35a-0g-Hqy">
     <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,7 +17,7 @@
         <!--Категории-->
         <scene sceneID="wsm-tM-0Pb">
             <objects>
-                <viewController title="Категории" id="F3v-6U-cmv" customClass="CategoryListViewController" customModule="RecipeCatalog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CategoryListViewController" title="Категории" id="F3v-6U-cmv" customClass="CategoryListViewController" customModule="RecipeCatalog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gEY-2A-bpA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -599,6 +599,7 @@
         <!--Navigation Category View Controller-->
         <scene sceneID="8wz-eL-rEY">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4qH-3N-Ih3" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="35a-0g-Hqy" customClass="NavigationCategoryViewController" customModule="RecipeCatalog" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="l8Y-xq-uRC">
@@ -615,106 +616,8 @@
                         <segue destination="F3v-6U-cmv" kind="relationship" relationship="rootViewController" id="tcV-f1-tUC"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4qH-3N-Ih3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="810.94452773613204"/>
-        </scene>
-        <!--Thems View Controller-->
-        <scene sceneID="pxT-Mg-UCX">
-            <objects>
-                <viewController id="gH8-M8-zVv" customClass="ThemsViewController" customModule="RecipeCatalog" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="WHC-Eo-8cv">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="darkInterface" translatesAutoresizingMaskIntoConstraints="NO" id="Ltw-7y-hoU">
-                                <rect key="frame" x="234" y="378" width="160" height="348"/>
-                                <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="348" id="5jF-6I-BOv"/>
-                                    <constraint firstAttribute="width" constant="160" id="FEW-73-WJ8"/>
-                                </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="BMu-7c-ued" appends="YES" id="CT9-58-0Dx"/>
-                                </connections>
-                            </imageView>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lightInterface" translatesAutoresizingMaskIntoConstraints="NO" id="BRw-fK-4kn">
-                                <rect key="frame" x="12" y="378" width="160" height="348"/>
-                                <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="348" id="Chd-Q9-SwS"/>
-                                    <constraint firstAttribute="width" constant="160" id="avk-Kw-2je"/>
-                                </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="Sl8-lC-dpW" appends="YES" id="Bop-kp-E5z"/>
-                                </connections>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите тему оформления" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFK-z9-Ofs">
-                                <rect key="frame" x="26.666666666666657" y="734" width="360.66666666666674" height="33.666666666666629"/>
-                                <fontDescription key="fontDescription" type="italicSystem" pointSize="28"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bvx-lU-zut">
-                                <rect key="frame" x="97" y="797.66666666666663" width="220" height="39"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="220" id="Gce-1u-0cL"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="italicSystem" pointSize="22"/>
-                                <state key="normal" title="Готово!"/>
-                                <connections>
-                                    <segue destination="35a-0g-Hqy" kind="show" id="yWp-1p-05N"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Добро пожаловать!!!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OhR-82-KYJ">
-                                <rect key="frame" x="40.666666666666657" y="47" width="332.66666666666674" height="43"/>
-                                <fontDescription key="fontDescription" name="Calibri-Italic" family="Calibri" pointSize="35"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="7QJ-Yd-rPu" firstAttribute="bottom" secondItem="BRw-fK-4kn" secondAttribute="bottom" constant="136" id="185-F1-rkH"/>
-                            <constraint firstItem="OhR-82-KYJ" firstAttribute="centerX" secondItem="WHC-Eo-8cv" secondAttribute="centerX" id="2KK-aj-PVL"/>
-                            <constraint firstItem="wFK-z9-Ofs" firstAttribute="centerX" secondItem="WHC-Eo-8cv" secondAttribute="centerX" id="34K-oO-6cv"/>
-                            <constraint firstItem="Bvx-lU-zut" firstAttribute="top" secondItem="wFK-z9-Ofs" secondAttribute="bottom" constant="30" id="4rE-bb-azq"/>
-                            <constraint firstItem="BRw-fK-4kn" firstAttribute="leading" secondItem="7QJ-Yd-rPu" secondAttribute="leading" constant="12" id="5d5-Vw-AbH"/>
-                            <constraint firstItem="7QJ-Yd-rPu" firstAttribute="trailing" secondItem="Ltw-7y-hoU" secondAttribute="trailing" constant="20" id="CsA-70-ked"/>
-                            <constraint firstItem="Bvx-lU-zut" firstAttribute="centerX" secondItem="WHC-Eo-8cv" secondAttribute="centerX" id="FO6-Du-Awr"/>
-                            <constraint firstItem="wFK-z9-Ofs" firstAttribute="top" secondItem="Ltw-7y-hoU" secondAttribute="bottom" constant="8" id="LHp-9c-VeS"/>
-                            <constraint firstItem="OhR-82-KYJ" firstAttribute="top" secondItem="7QJ-Yd-rPu" secondAttribute="top" constant="3" id="WJN-8D-hBa"/>
-                            <constraint firstItem="7QJ-Yd-rPu" firstAttribute="bottom" secondItem="Ltw-7y-hoU" secondAttribute="bottom" constant="136" id="yR4-Ub-aJl"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="7QJ-Yd-rPu"/>
-                    </view>
-                    <connections>
-                        <outlet property="applyButton" destination="Bvx-lU-zut" id="YSn-SS-ZTD"/>
-                        <outlet property="backgroundView" destination="WHC-Eo-8cv" id="i54-Sn-FtZ"/>
-                        <outlet property="chooseLable" destination="wFK-z9-Ofs" id="KOH-Un-Gda"/>
-                        <outlet property="darkImadge" destination="Ltw-7y-hoU" id="uVn-ez-Svb"/>
-                        <outlet property="heightDarkImadge" destination="5jF-6I-BOv" id="a5L-cK-yHM"/>
-                        <outlet property="heightLightImage" destination="Chd-Q9-SwS" id="Top-i2-sGn"/>
-                        <outlet property="lightImage" destination="BRw-fK-4kn" id="LyN-Hg-NN7"/>
-                        <outlet property="weightDarkImadge" destination="FEW-73-WJ8" id="WJQ-Be-abC"/>
-                        <outlet property="welcomaLable" destination="OhR-82-KYJ" id="dsH-lf-s6j"/>
-                        <outlet property="welcomeLableConstraint" destination="WJN-8D-hBa" id="Wmw-QT-qBJ"/>
-                        <outlet property="widthLightImage" destination="avk-Kw-2je" id="lLd-Ed-Hiu"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AaS-JG-fdI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="Sl8-lC-dpW">
-                    <connections>
-                        <action selector="handleTap:" destination="gH8-M8-zVv" id="jId-wN-JgC"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="BMu-7c-ued">
-                    <connections>
-                        <action selector="handelDarkTap:" destination="gH8-M8-zVv" id="vuS-dh-DdF"/>
-                    </connections>
-                </tapGestureRecognizer>
-            </objects>
-            <point key="canvasLocation" x="-822" y="810"/>
         </scene>
     </scenes>
     <resources>
@@ -723,8 +626,6 @@
         <image name="ReceptZagl" width="355" height="183"/>
         <image name="Search" width="23" height="23"/>
         <image name="TextImage" width="331" height="158"/>
-        <image name="darkInterface" width="1125" height="2436"/>
         <image name="iconsRec" width="110" height="110"/>
-        <image name="lightInterface" width="1125" height="2436"/>
     </resources>
 </document>

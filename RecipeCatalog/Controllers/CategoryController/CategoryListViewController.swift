@@ -9,6 +9,8 @@
 import UIKit
 
 class CategoryListViewController: UIViewController {
+    
+    var onCompletion: CompletionBlock?
 
     //MARK: - Private Properties
     
@@ -33,9 +35,6 @@ class CategoryListViewController: UIViewController {
         categoryTable.backgroundColor = ThemAppearance.backgroundColor.uiColor()
         
         workwithFireBase()
-        delegateWorkWithFirebase.takeListOfRecipes(idCategory: "102") { (array) in
-            print(array)
-        }
         
         findButton.createFloatingActionButton()
     }
