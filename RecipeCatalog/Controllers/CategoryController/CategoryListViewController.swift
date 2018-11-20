@@ -33,9 +33,6 @@ class CategoryListViewController: UIViewController {
         categoryTable.backgroundColor = ThemAppearance.backgroundColor.uiColor()
         
         workwithFireBase()
-        delegateWorkWithFirebase.takeListOfRecipes(idCategory: "102") { (array) in
-            print(array)
-        }
         
         findButton.createFloatingActionButton()
     }

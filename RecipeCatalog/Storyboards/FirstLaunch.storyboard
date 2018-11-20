@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Calibri Italic.ttf">
+            <string>Calibri-Italic</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Thems View Controller-->
+        <scene sceneID="U8k-RE-UMw">
+            <objects>
+                <viewController storyboardIdentifier="FirstLaunchChoseTheme" id="Z0D-5S-m0G" customClass="ThemsViewController" customModule="RecipeCatalog" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="p5m-4K-rFD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="darkInterface" translatesAutoresizingMaskIntoConstraints="NO" id="zye-c3-8Ra">
+                                <rect key="frame" x="195" y="183" width="160" height="348"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="348" id="6pX-06-iLo"/>
+                                    <constraint firstAttribute="width" constant="160" id="y6s-TW-Ho8"/>
+                                </constraints>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lightInterface" translatesAutoresizingMaskIntoConstraints="NO" id="5JC-e8-oYV">
+                                <rect key="frame" x="12" y="183" width="160" height="348"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="5Nr-TV-2r6"/>
+                                    <constraint firstAttribute="height" constant="348" id="6E1-y5-cxg"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите тему оформления" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tuw-wj-250">
+                                <rect key="frame" x="7" y="539" width="361" height="33.5"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hhy-Se-9dX">
+                                <rect key="frame" x="77.5" y="602.5" width="220" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="220" id="o2F-vL-LFK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="22"/>
+                                <state key="normal" title="Готово!"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Добро пожаловать!!!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2e-PP-c2Q">
+                                <rect key="frame" x="17" y="23" width="341.5" height="41"/>
+                                <fontDescription key="fontDescription" name="Calibri-Italic" family="Calibri" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Hhy-Se-9dX" firstAttribute="centerX" secondItem="p5m-4K-rFD" secondAttribute="centerX" id="1Hk-Ga-HZZ"/>
+                            <constraint firstItem="tuw-wj-250" firstAttribute="centerX" secondItem="p5m-4K-rFD" secondAttribute="centerX" id="88A-QE-nO1"/>
+                            <constraint firstItem="c2e-PP-c2Q" firstAttribute="centerX" secondItem="p5m-4K-rFD" secondAttribute="centerX" id="CJU-ad-knh"/>
+                            <constraint firstItem="5JC-e8-oYV" firstAttribute="leading" secondItem="iGK-YZ-Kmi" secondAttribute="leading" constant="12" id="Cw2-AI-AeP"/>
+                            <constraint firstItem="Hhy-Se-9dX" firstAttribute="top" secondItem="tuw-wj-250" secondAttribute="bottom" constant="30" id="DwT-UQ-yHE"/>
+                            <constraint firstItem="iGK-YZ-Kmi" firstAttribute="bottom" secondItem="zye-c3-8Ra" secondAttribute="bottom" constant="136" id="LV8-r0-Zsa"/>
+                            <constraint firstItem="iGK-YZ-Kmi" firstAttribute="trailing" secondItem="zye-c3-8Ra" secondAttribute="trailing" constant="20" id="e86-Ha-TWs"/>
+                            <constraint firstItem="tuw-wj-250" firstAttribute="top" secondItem="zye-c3-8Ra" secondAttribute="bottom" constant="8" id="lyS-wz-ZmB"/>
+                            <constraint firstItem="c2e-PP-c2Q" firstAttribute="top" secondItem="iGK-YZ-Kmi" secondAttribute="top" constant="3" id="oL1-Pw-rgr"/>
+                            <constraint firstItem="iGK-YZ-Kmi" firstAttribute="bottom" secondItem="5JC-e8-oYV" secondAttribute="bottom" constant="136" id="tML-Up-RMQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="iGK-YZ-Kmi"/>
+                    </view>
+                    <connections>
+                        <outlet property="applyButton" destination="Hhy-Se-9dX" id="ll7-tN-tSH"/>
+                        <outlet property="backgroundView" destination="p5m-4K-rFD" id="wcF-lg-f88"/>
+                        <outlet property="chooseLable" destination="tuw-wj-250" id="SQ2-th-CgA"/>
+                        <outlet property="darkImadge" destination="zye-c3-8Ra" id="JH7-f4-yiA"/>
+                        <outlet property="heightDarkImadge" destination="6pX-06-iLo" id="SuF-Pu-3ut"/>
+                        <outlet property="heightLightImage" destination="6E1-y5-cxg" id="3IM-UD-qYn"/>
+                        <outlet property="lightImage" destination="5JC-e8-oYV" id="tOy-8S-Aio"/>
+                        <outlet property="weightDarkImadge" destination="y6s-TW-Ho8" id="5sT-XD-MCr"/>
+                        <outlet property="welcomaLable" destination="c2e-PP-c2Q" id="7Ef-5I-9va"/>
+                        <outlet property="welcomeLableConstraint" destination="oL1-Pw-rgr" id="EO0-qE-6Ao"/>
+                        <outlet property="widthLightImage" destination="5Nr-TV-2r6" id="xtZ-3O-iaZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4yM-Qc-b2i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-822" y="810"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="darkInterface" width="1125" height="2436"/>
+        <image name="lightInterface" width="1125" height="2436"/>
+    </resources>
+</document>

@@ -34,6 +34,16 @@
 		2DC500612187699A00C661CC /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC500602187699A00C661CC /* Category.swift */; };
 		2DC500632187817F00C661CC /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC500622187817F00C661CC /* Ingredient.swift */; };
 		2DC500652187819D00C661CC /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC500642187819D00C661CC /* Recipe.swift */; };
+		2DD0E21A21A4293500F1972F /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0E21921A4293500F1972F /* AppCoordinator.swift */; };
+		2DD0E21D21A42A9300F1972F /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0E21C21A42A9300F1972F /* Presentable.swift */; };
+		2DD0E21F21A42AAC00F1972F /* Coordinatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0E21E21A42AAC00F1972F /* Coordinatable.swift */; };
+		2DD0E22121A42ABE00F1972F /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0E22021A42ABE00F1972F /* Routable.swift */; };
+		2DD0E22321A42D5B00F1972F /* UIAlertControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0E22221A42D5B00F1972F /* UIAlertControllerHelper.swift */; };
+		2DD0E22521A4306F00F1972F /* FirstLaunch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DD0E22421A4306F00F1972F /* FirstLaunch.storyboard */; };
+		2DD0E22821A4363800F1972F /* FirstLaunchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0E22721A4363800F1972F /* FirstLaunchCoordinator.swift */; };
+		2DD0E22A21A4366700F1972F /* FirstLaunchCoordinatorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0E22921A4366700F1972F /* FirstLaunchCoordinatorOutput.swift */; };
+		2DD0E22D21A4371B00F1972F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0E22C21A4371B00F1972F /* Constants.swift */; };
+		2DD0E22F21A4399A00F1972F /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0E22E21A4399A00F1972F /* BaseCoordinator.swift */; };
 		4916A59D21920B64006FBF53 /* RequestsDownloadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916A59C21920B64006FBF53 /* RequestsDownloadImage.swift */; };
 		4916A5A021921C45006FBF53 /* NetworkBornFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916A59F21921C45006FBF53 /* NetworkBornFactory.swift */; };
 		8960EA4D179BE0934E1C49EE /* Pods_RecipeCatalogTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 742DCCDE18B87320D70D055E /* Pods_RecipeCatalogTests.framework */; };
@@ -92,6 +102,16 @@
 		2DC500602187699A00C661CC /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		2DC500622187817F00C661CC /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		2DC500642187819D00C661CC /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		2DD0E21921A4293500F1972F /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		2DD0E21C21A42A9300F1972F /* Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
+		2DD0E21E21A42AAC00F1972F /* Coordinatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinatable.swift; sourceTree = "<group>"; };
+		2DD0E22021A42ABE00F1972F /* Routable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routable.swift; sourceTree = "<group>"; };
+		2DD0E22221A42D5B00F1972F /* UIAlertControllerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertControllerHelper.swift; sourceTree = "<group>"; };
+		2DD0E22421A4306F00F1972F /* FirstLaunch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FirstLaunch.storyboard; sourceTree = "<group>"; };
+		2DD0E22721A4363800F1972F /* FirstLaunchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunchCoordinator.swift; sourceTree = "<group>"; };
+		2DD0E22921A4366700F1972F /* FirstLaunchCoordinatorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunchCoordinatorOutput.swift; sourceTree = "<group>"; };
+		2DD0E22C21A4371B00F1972F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2DD0E22E21A4399A00F1972F /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		330A4985754DA40BDEA7AC4D /* Pods-RecipeCatalog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipeCatalog.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RecipeCatalog/Pods-RecipeCatalog.debug.xcconfig"; sourceTree = "<group>"; };
 		4795F59C5FF476A2F7E822B9 /* Pods_RecipeCatalogUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecipeCatalogUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		483DE6E8A2BB9212C01FD3A1 /* Pods_RecipeCatalog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecipeCatalog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -177,13 +197,14 @@
 			path = RecipesController;
 			sourceTree = "<group>";
 		};
-		02945766218B0A2D00326796 /* extension */ = {
+		02945766218B0A2D00326796 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
 				02945767218B0A5E00326796 /* hexToColorExtension.swift */,
 				021C7104219AE54900E5137C /* UIButtonExtention.swift */,
+				2DD0E22221A42D5B00F1972F /* UIAlertControllerHelper.swift */,
 			);
-			path = extension;
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		2D98C7BB218734E50017E50A = {
@@ -211,6 +232,7 @@
 		2D98C7C6218734E50017E50A /* RecipeCatalog */ = {
 			isa = PBXGroup;
 			children = (
+				2DD0E21821A4290200F1972F /* Navigation */,
 				2DC5005D218763EB00C661CC /* Network */,
 				2D98C7F5218734EE0017E50A /* Model */,
 				2D98C7F82187350D0017E50A /* Storyboards */,
@@ -251,8 +273,9 @@
 		2D98C7F6218734F70017E50A /* Supporting */ = {
 			isa = PBXGroup;
 			children = (
+				2DD0E22B21A436DB00F1972F /* Constants */,
 				021C710D219DED4D00E5137C /* Resources */,
-				02945766218B0A2D00326796 /* extension */,
+				02945766218B0A2D00326796 /* Extension */,
 				2D98C7F9218735390017E50A /* Settings */,
 				2D98C7C7218734E50017E50A /* AppDelegate.swift */,
 				2D98C7CE218734E50017E50A /* Assets.xcassets */,
@@ -277,6 +300,7 @@
 			children = (
 				2D98C7D0218734E50017E50A /* LaunchScreen.storyboard */,
 				2D98C7CB218734E50017E50A /* Main.storyboard */,
+				2DD0E22421A4306F00F1972F /* FirstLaunch.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -299,6 +323,44 @@
 				4916A59F21921C45006FBF53 /* NetworkBornFactory.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		2DD0E21821A4290200F1972F /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				2DD0E22621A435FF00F1972F /* FirstLaunchCoordinator */,
+				2DD0E21B21A42A6800F1972F /* Protocols */,
+				2DD0E21921A4293500F1972F /* AppCoordinator.swift */,
+				2DD0E22E21A4399A00F1972F /* BaseCoordinator.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		2DD0E21B21A42A6800F1972F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				2DD0E21E21A42AAC00F1972F /* Coordinatable.swift */,
+				2DD0E21C21A42A9300F1972F /* Presentable.swift */,
+				2DD0E22021A42ABE00F1972F /* Routable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		2DD0E22621A435FF00F1972F /* FirstLaunchCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				2DD0E22721A4363800F1972F /* FirstLaunchCoordinator.swift */,
+				2DD0E22921A4366700F1972F /* FirstLaunchCoordinatorOutput.swift */,
+			);
+			path = FirstLaunchCoordinator;
+			sourceTree = "<group>";
+		};
+		2DD0E22B21A436DB00F1972F /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				2DD0E22C21A4371B00F1972F /* Constants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		71306C190A5AFA0754ECD843 /* Pods */ = {
@@ -434,6 +496,7 @@
 			files = (
 				2D98C7D2218734E50017E50A /* LaunchScreen.storyboard in Resources */,
 				2D98C7FB2187434C0017E50A /* GoogleService-Info.plist in Resources */,
+				2DD0E22521A4306F00F1972F /* FirstLaunch.storyboard in Resources */,
 				2D98C7CF218734E50017E50A /* Assets.xcassets in Resources */,
 				021C7111219DEFCD00E5137C /* Calibri Italic.ttf in Resources */,
 				2D98C7CD218734E50017E50A /* Main.storyboard in Resources */,
@@ -485,7 +548,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -494,7 +557,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -546,12 +609,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DD0E21A21A4293500F1972F /* AppCoordinator.swift in Sources */,
+				2DD0E22821A4363800F1972F /* FirstLaunchCoordinator.swift in Sources */,
 				024C1F662192F49A00C69999 /* RecipeMainConrollerTableViewController.swift in Sources */,
 				2DC5005F218764D100C661CC /* RequestsToFireBaseFactory.swift in Sources */,
 				021C710F219DEDB400E5137C /* Font.swift in Sources */,
+				2DD0E22D21A4371B00F1972F /* Constants.swift in Sources */,
 				2D98C7C8218734E50017E50A /* AppDelegate.swift in Sources */,
+				2DD0E21F21A42AAC00F1972F /* Coordinatable.swift in Sources */,
 				024C1F6A2192F4F500C69999 /* IngridientsTableViewCell.swift in Sources */,
 				021C710C219D8DD700E5137C /* ColorShame.swift in Sources */,
+				2DD0E21D21A42A9300F1972F /* Presentable.swift in Sources */,
 				0292AF162189B78500A6A4DB /* RecipesTableViewCell.swift in Sources */,
 				0292AF142189B71A00A6A4DB /* RecipesTableViewController.swift in Sources */,
 				02945768218B0A5E00326796 /* hexToColorExtension.swift in Sources */,
@@ -565,8 +633,12 @@
 				021C7105219AE54900E5137C /* UIButtonExtention.swift in Sources */,
 				021C7108219C0CC200E5137C /* ThemsViewController.swift in Sources */,
 				2DC500612187699A00C661CC /* Category.swift in Sources */,
+				2DD0E22321A42D5B00F1972F /* UIAlertControllerHelper.swift in Sources */,
+				2DD0E22F21A4399A00F1972F /* BaseCoordinator.swift in Sources */,
 				021C70DB2199862F00E5137C /* CategoryListViewController.swift in Sources */,
+				2DD0E22A21A4366700F1972F /* FirstLaunchCoordinatorOutput.swift in Sources */,
 				024C1F6C2192F51400C69999 /* RecipeTableViewCell.swift in Sources */,
+				2DD0E22121A42ABE00F1972F /* Routable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
