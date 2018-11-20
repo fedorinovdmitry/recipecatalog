@@ -46,7 +46,7 @@ struct SchemeColor {
         let userDefoults = UserDefaults.standard
         
         let set = userDefoults.bool(forKey: "Them")
-        print(set)
+
         if set == true{
             option = .LIGHT
         }
