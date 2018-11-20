@@ -9,6 +9,8 @@
 import UIKit
 
 class CategoryListViewController: UIViewController {
+    
+    var onCompletion: CompletionBlock?
 
     //MARK: - Private Properties
     

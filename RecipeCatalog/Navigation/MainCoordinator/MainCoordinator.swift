@@ -1,5 +1,5 @@
 //
-//  FirstLaunchCoordinator.swift
+//  MainCoordinator.swift
 //  RecipeCatalog
 //
 //  Created by Дмитрий Федоринов on 20.11.2018.
@@ -8,31 +8,31 @@
 
 import Foundation
 
-final class FirstLaunchCoordinator: BaseCoordinator, FirstLaunchCoordinatorOutput {
-
+final class MainCoordinator: BaseCoordinator, MainCoordinatorOutput {
+    
     var finishFlow: CompletionBlock?
-
-    fileprivate let factory: FirstLaunchFactoryProtocol
+    
+    fileprivate let factory: MainCoordinatorFactoryProtocol
     fileprivate let router: Routable
-
-    init(router: Routable, factory: FirstLaunchFactoryProtocol) {
+    
+    init(router: Routable, factory: MainCoordinatorFactoryProtocol) {
         self.factory = factory
         self.router  = router
     }
 }
 
 // MARK:- Coordinatable
-extension FirstLaunchCoordinator: Coordinatable {
+extension MainCoordinator: Coordinatable {
     func start() {
         performFlow()
     }
 }
 
 // MARK:- Private methods
-private extension FirstLaunchCoordinator {
+private extension MainCoordinator {
     func performFlow() {
-        let enterView = factory.makeEnterView()
+        let enterView = factory.makeCategoryListView()
         enterView.onCompletion = finishFlow
-        router.setRootModule(enterView, hideBar: true)
+        router.setRootModule(enterView)
     }
 }

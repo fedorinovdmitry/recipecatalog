@@ -45,6 +45,16 @@
 		2DD0E22A21A4366700F1972F /* FirstLaunchCoordinatorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0E22921A4366700F1972F /* FirstLaunchCoordinatorOutput.swift */; };
 		2DD0E22D21A4371B00F1972F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0E22C21A4371B00F1972F /* Constants.swift */; };
 		2DD0E22F21A4399A00F1972F /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0E22E21A4399A00F1972F /* BaseCoordinator.swift */; };
+		2DD0E23121A441D300F1972F /* FirstLaunchFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0E23021A441D300F1972F /* FirstLaunchFactoryProtocol.swift */; };
+		2DD0E23321A4491E00F1972F /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0E23221A4491E00F1972F /* Router.swift */; };
+		2DD0E23521A4550600F1972F /* CoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0E23421A4550600F1972F /* CoordinatorFactory.swift */; };
+		2DD0E23721A46B5E00F1972F /* ModulesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0E23621A46B5E00F1972F /* ModulesFactory.swift */; };
+		2DD0E23921A46DFD00F1972F /* UIViewController+Creation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0E23821A46DFD00F1972F /* UIViewController+Creation.swift */; };
+		2DD0E23B21A46E3900F1972F /* NSObject+ClassDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0E23A21A46E3900F1972F /* NSObject+ClassDefinition.swift */; };
+		2DD0E23D21A470E500F1972F /* CoordinatorFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0E23C21A470E500F1972F /* CoordinatorFactoryProtocol.swift */; };
+		2DD0E24021A47FA500F1972F /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0E23F21A47FA500F1972F /* MainCoordinator.swift */; };
+		2DD0E24221A47FB400F1972F /* MainCoordinatorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0E24121A47FB400F1972F /* MainCoordinatorOutput.swift */; };
+		2DD0E24421A4801800F1972F /* MainCoordinatorFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0E24321A4801800F1972F /* MainCoordinatorFactoryProtocol.swift */; };
 		4916A59D21920B64006FBF53 /* RequestsDownloadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916A59C21920B64006FBF53 /* RequestsDownloadImage.swift */; };
 		4916A5A021921C45006FBF53 /* NetworkBornFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916A59F21921C45006FBF53 /* NetworkBornFactory.swift */; };
 		8960EA4D179BE0934E1C49EE /* Pods_RecipeCatalogTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 742DCCDE18B87320D70D055E /* Pods_RecipeCatalogTests.framework */; };
@@ -114,6 +124,16 @@
 		2DD0E22921A4366700F1972F /* FirstLaunchCoordinatorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunchCoordinatorOutput.swift; sourceTree = "<group>"; };
 		2DD0E22C21A4371B00F1972F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2DD0E22E21A4399A00F1972F /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		2DD0E23021A441D300F1972F /* FirstLaunchFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunchFactoryProtocol.swift; sourceTree = "<group>"; };
+		2DD0E23221A4491E00F1972F /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		2DD0E23421A4550600F1972F /* CoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactory.swift; sourceTree = "<group>"; };
+		2DD0E23621A46B5E00F1972F /* ModulesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModulesFactory.swift; sourceTree = "<group>"; };
+		2DD0E23821A46DFD00F1972F /* UIViewController+Creation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Creation.swift"; sourceTree = "<group>"; };
+		2DD0E23A21A46E3900F1972F /* NSObject+ClassDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+ClassDefinition.swift"; sourceTree = "<group>"; };
+		2DD0E23C21A470E500F1972F /* CoordinatorFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactoryProtocol.swift; sourceTree = "<group>"; };
+		2DD0E23F21A47FA500F1972F /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		2DD0E24121A47FB400F1972F /* MainCoordinatorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinatorOutput.swift; sourceTree = "<group>"; };
+		2DD0E24321A4801800F1972F /* MainCoordinatorFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinatorFactoryProtocol.swift; sourceTree = "<group>"; };
 		330A4985754DA40BDEA7AC4D /* Pods-RecipeCatalog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipeCatalog.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RecipeCatalog/Pods-RecipeCatalog.debug.xcconfig"; sourceTree = "<group>"; };
 		4795F59C5FF476A2F7E822B9 /* Pods_RecipeCatalogUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecipeCatalogUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		483DE6E8A2BB9212C01FD3A1 /* Pods_RecipeCatalog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecipeCatalog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -206,6 +226,8 @@
 				02945767218B0A5E00326796 /* hexToColorExtension.swift */,
 				021C7104219AE54900E5137C /* UIButtonExtention.swift */,
 				2DD0E22221A42D5B00F1972F /* UIAlertControllerHelper.swift */,
+				2DD0E23821A46DFD00F1972F /* UIViewController+Creation.swift */,
+				2DD0E23A21A46E3900F1972F /* NSObject+ClassDefinition.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -331,10 +353,15 @@
 		2DD0E21821A4290200F1972F /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				2DD0E23E21A47F8C00F1972F /* MainCoordinator */,
 				2DD0E22621A435FF00F1972F /* FirstLaunchCoordinator */,
 				2DD0E21B21A42A6800F1972F /* Protocols */,
 				2DD0E21921A4293500F1972F /* AppCoordinator.swift */,
+				2DD0E23621A46B5E00F1972F /* ModulesFactory.swift */,
 				2DD0E22E21A4399A00F1972F /* BaseCoordinator.swift */,
+				2DD0E23221A4491E00F1972F /* Router.swift */,
+				2DD0E23421A4550600F1972F /* CoordinatorFactory.swift */,
+				2DD0E23C21A470E500F1972F /* CoordinatorFactoryProtocol.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -345,6 +372,8 @@
 				2DD0E21E21A42AAC00F1972F /* Coordinatable.swift */,
 				2DD0E21C21A42A9300F1972F /* Presentable.swift */,
 				2DD0E22021A42ABE00F1972F /* Routable.swift */,
+				2DD0E23021A441D300F1972F /* FirstLaunchFactoryProtocol.swift */,
+				2DD0E24321A4801800F1972F /* MainCoordinatorFactoryProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -364,6 +393,15 @@
 				2DD0E22C21A4371B00F1972F /* Constants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		2DD0E23E21A47F8C00F1972F /* MainCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				2DD0E23F21A47FA500F1972F /* MainCoordinator.swift */,
+				2DD0E24121A47FB400F1972F /* MainCoordinatorOutput.swift */,
+			);
+			path = MainCoordinator;
 			sourceTree = "<group>";
 		};
 		71306C190A5AFA0754ECD843 /* Pods */ = {
@@ -619,7 +657,10 @@
 				021BC7BC21A406FC006F9A7E /* RecipeTitleTableViewCell.swift in Sources */,
 				021C710F219DEDB400E5137C /* Font.swift in Sources */,
 				2DD0E22D21A4371B00F1972F /* Constants.swift in Sources */,
+				2DD0E23721A46B5E00F1972F /* ModulesFactory.swift in Sources */,
+				2DD0E23D21A470E500F1972F /* CoordinatorFactoryProtocol.swift in Sources */,
 				2D98C7C8218734E50017E50A /* AppDelegate.swift in Sources */,
+				2DD0E24021A47FA500F1972F /* MainCoordinator.swift in Sources */,
 				2DD0E21F21A42AAC00F1972F /* Coordinatable.swift in Sources */,
 				024C1F6A2192F4F500C69999 /* IngridientsTableViewCell.swift in Sources */,
 				021C710C219D8DD700E5137C /* ColorShame.swift in Sources */,
@@ -627,18 +668,25 @@
 				0292AF162189B78500A6A4DB /* RecipesTableViewCell.swift in Sources */,
 				0292AF142189B71A00A6A4DB /* RecipesTableViewController.swift in Sources */,
 				02945768218B0A5E00326796 /* hexToColorExtension.swift in Sources */,
+				2DD0E23B21A46E3900F1972F /* NSObject+ClassDefinition.swift in Sources */,
+				2DD0E23521A4550600F1972F /* CoordinatorFactory.swift in Sources */,
 				2DC500652187819D00C661CC /* Recipe.swift in Sources */,
+				2DD0E23121A441D300F1972F /* FirstLaunchFactoryProtocol.swift in Sources */,
 				0292AF0F2189A89500A6A4DB /* CategoryTableViewCell.swift in Sources */,
 				024C1F682192F4BA00C69999 /* ImageRecipeTableViewCell.swift in Sources */,
+				2DD0E24221A47FB400F1972F /* MainCoordinatorOutput.swift in Sources */,
 				4916A59D21920B64006FBF53 /* RequestsDownloadImage.swift in Sources */,
+				2DD0E24421A4801800F1972F /* MainCoordinatorFactoryProtocol.swift in Sources */,
 				2DC500632187817F00C661CC /* Ingredient.swift in Sources */,
 				024C1F702193033C00C69999 /* NavigationCategoryViewController.swift in Sources */,
+				2DD0E23321A4491E00F1972F /* Router.swift in Sources */,
 				4916A5A021921C45006FBF53 /* NetworkBornFactory.swift in Sources */,
 				021C7105219AE54900E5137C /* UIButtonExtention.swift in Sources */,
 				021C7108219C0CC200E5137C /* ThemsViewController.swift in Sources */,
 				2DC500612187699A00C661CC /* Category.swift in Sources */,
 				2DD0E22321A42D5B00F1972F /* UIAlertControllerHelper.swift in Sources */,
 				2DD0E22F21A4399A00F1972F /* BaseCoordinator.swift in Sources */,
+				2DD0E23921A46DFD00F1972F /* UIViewController+Creation.swift in Sources */,
 				021C70DB2199862F00E5137C /* CategoryListViewController.swift in Sources */,
 				2DD0E22A21A4366700F1972F /* FirstLaunchCoordinatorOutput.swift in Sources */,
 				024C1F6C2192F51400C69999 /* RecipeTableViewCell.swift in Sources */,

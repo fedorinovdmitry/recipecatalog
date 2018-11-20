@@ -9,11 +9,16 @@
 import UIKit
 
 class NavigationCategoryViewController: UINavigationController {
-
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.navigationBar.barTintColor = ThemAppearance.backgroundNavigationColor.uiColor()
         self.navigationBar.tintColor = UIColor.white
+        self.navigationBar.titleTextAttributes =
+            [NSAttributedString.Key.foregroundColor: UIColor.white,
+             NSAttributedString.Key.font: UIFont(name: "SnellRoundhand-Bold", size: 31)!]
     }
 }

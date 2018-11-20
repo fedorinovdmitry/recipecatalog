@@ -10,10 +10,16 @@ import UIKit
 
 final class ThemsViewController: UIViewController {
     
+    
+    var onCompletion: CompletionBlock?
+    
     //MARK: - Constants
+    
     let userDefaults = UserDefaults.standard
     
+    
     //MARK: - Outlets
+    
     @IBOutlet weak var lightImage: UIImageView!
     @IBOutlet weak var heightLightImage: NSLayoutConstraint!
     @IBOutlet weak var widthLightImage: NSLayoutConstraint!
@@ -28,7 +34,18 @@ final class ThemsViewController: UIViewController {
     @IBOutlet weak var applyButton: UIButton!
     
     @IBOutlet weak var welcomeLableConstraint: NSLayoutConstraint!
+    
+    
+    @IBAction func applyAction(_ sender: Any) {
+        
+        userDefaults.set(true, forKey: "ThemChoisen")
+        self.navigationController?.navigationBar.barTintColor = ThemAppearance.backgroundNavigationColor.uiColor()
+        onCompletion?()
+        
+        
+    }
     //MARK: - LifeStyle ViewController
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
