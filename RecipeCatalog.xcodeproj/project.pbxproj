@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		021BC7BC21A406FC006F9A7E /* RecipeTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021BC7BB21A406FC006F9A7E /* RecipeTitleTableViewCell.swift */; };
 		021C70DB2199862F00E5137C /* CategoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021C70DA2199862F00E5137C /* CategoryListViewController.swift */; };
 		021C7105219AE54900E5137C /* UIButtonExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021C7104219AE54900E5137C /* UIButtonExtention.swift */; };
 		021C7108219C0CC200E5137C /* ThemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021C7107219C0CC200E5137C /* ThemsViewController.swift */; };
@@ -58,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		021BC7BB21A406FC006F9A7E /* RecipeTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTitleTableViewCell.swift; sourceTree = "<group>"; };
 		021C70DA2199862F00E5137C /* CategoryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListViewController.swift; sourceTree = "<group>"; };
 		021C7104219AE54900E5137C /* UIButtonExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtention.swift; sourceTree = "<group>"; };
 		021C7107219C0CC200E5137C /* ThemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemsViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				024C1F672192F4BA00C69999 /* ImageRecipeTableViewCell.swift */,
 				024C1F692192F4F500C69999 /* IngridientsTableViewCell.swift */,
 				024C1F6B2192F51400C69999 /* RecipeTableViewCell.swift */,
+				021BC7BB21A406FC006F9A7E /* RecipeTitleTableViewCell.swift */,
 			);
 			path = RecipeMainController;
 			sourceTree = "<group>";
@@ -548,6 +551,7 @@
 			files = (
 				024C1F662192F49A00C69999 /* RecipeMainConrollerTableViewController.swift in Sources */,
 				2DC5005F218764D100C661CC /* RequestsToFireBaseFactory.swift in Sources */,
+				021BC7BC21A406FC006F9A7E /* RecipeTitleTableViewCell.swift in Sources */,
 				021C710F219DEDB400E5137C /* Font.swift in Sources */,
 				2D98C7C8218734E50017E50A /* AppDelegate.swift in Sources */,
 				024C1F6A2192F4F500C69999 /* IngridientsTableViewCell.swift in Sources */,
