@@ -14,7 +14,6 @@ class RecipeTableViewCell: UITableViewCell {
     @IBOutlet weak var contentCell: UIView!
     @IBOutlet weak var maskViewCell: UIView!
     @IBOutlet weak var titleLableCell: UILabel!
-    @IBOutlet weak var timerLableCell: UILabel!
     @IBOutlet weak var imageViewCell: UIImageView!
     @IBOutlet weak var recipetLableCell: UILabel!
     @IBOutlet weak var beginStopButton: UIButton!
@@ -58,7 +57,6 @@ class RecipeTableViewCell: UITableViewCell {
         beginStopButton.backgroundColor = ThemAppearance.backgroundButtonColor.uiColor()
         pauseButton.backgroundColor = ThemAppearance.backgroundButtonColor.uiColor()
         
-        timerLableCell.textColor = ThemAppearance.textColor.uiColor()
         titleLableCell.textColor = ThemAppearance.textColor.uiColor()
         recipetLableCell.textColor = ThemAppearance.textColor.uiColor() 
     }

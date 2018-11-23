@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct LightPalette {
+struct LightPalette{
     //    light
     static let backgroundColor = UIColor(hexString: "#95C595")
     static let backgroundCellColor = UIColor(hexString: "#7BDE7B")
@@ -48,24 +48,20 @@ struct SchemeColor {
         let set = userDefoults.bool(forKey: "Them")
 
         if set == true{
-            option = .LIGHT
+            option = .light
         }
         else{
-            option = .DARK
+            option = .dark
         }
         return colorWith(scheme: option)
-    }
-    
-    func cgColor() -> CGColor {
-        return UIColor().cgColor
     }
     
     // MARK: Private methods
     private func colorWith(scheme: ColorSchemeOption) -> UIColor {
         switch scheme {
-        case .DARK:
+        case .dark:
             return dark
-        case .LIGHT:
+        case .light:
             return light
         }
     }
@@ -86,6 +82,6 @@ struct ThemAppearance {
 }
 
 enum ColorSchemeOption {
-    case DARK
-    case LIGHT
+    case dark
+    case light
 }
