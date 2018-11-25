@@ -17,25 +17,46 @@ struct Recipe {
     
     let id: String
     let title: String
-    let text: String
+    
     let complexity: Int
     let url: String
     var arrayIdOfCategories: [Category]? = nil
     var arrayIdParameters: [Ingredient]? = nil
-    
+    private var arrayOfSteps: [Step]? = nil
     /// - parameter snapshot: снимок бд в json формате
     init(snapshot: DataSnapshot) {
         let json = snapshot.value as! [String:AnyObject]
         ref = snapshot.ref
         id = json["id"] as! String
         title = json["title"] as! String
-        text = json["text"] as! String
+
         complexity = json["complexity"] as! Int
         url = json["url"] as! String
-        arrayIdOfCategories = self.getArrayofId(categories: json["idCategories"] as! [String:AnyObject])
-        arrayIdParameters = self.getArrayofId(parameters: json["idParameters"] as! [String:AnyObject])
+        if let jsonCat = json["idCategories"] as? [String:AnyObject] {
+            arrayIdOfCategories = self.getArrayofId(categories: jsonCat)
+        }
+        if let jsonPar = json["idParameters"] as? [String:AnyObject] {
+            arrayIdParameters = self.getArrayofId(parameters: jsonPar)
+        }
+        if let jsonStep = json["steps"] as? [String:AnyObject] {
+            arrayOfSteps = self.getArrayOfSteps(steps: jsonStep)
+        }
+        
     }
-    
+    /// возвращает структурированый массив с шагами рецепта по порядку
+    func getStepArray () -> [Step] {
+        var arr: [Step] = [Step]()
+        if let arrayOfSteps = self.arrayOfSteps {
+            for _ in 0...arrayOfSteps.count - 1{
+                arr.append(Step(number: 0, img: nil, text: "", time: nil))
+            }
+            for step in arrayOfSteps {
+                let index = step.number - 1
+                arr[index] = step
+            }
+        }
+        return arr
+    }
     /// Парсит джсон категории
     /// - parameter categories: снимок пункта категории в рецепте в json формате
     private func getArrayofId(categories:[String:AnyObject]) -> [Category] {
@@ -59,6 +80,21 @@ struct Recipe {
             let quantity = dicContainer["quantity"] as! String
             let title = dicContainer["title"] as! String
             array.append(Ingredient(id: id, title: title, quantity: quantity))
+        }
+        return array
+    }
+    /// Парсит джсон шагов
+    /// - parameter steps: снимок пункта шаги в рецепте в json формате
+    private func getArrayOfSteps(steps:[String:AnyObject]) -> [Step] {
+        var array = [Step]()
+        for dicId in steps {
+            let dicContainer = dicId.value as! [String:AnyObject]
+            let number = dicContainer["number"] as! Int
+            let img = dicContainer["img"] as? String
+            let text = dicContainer["text"] as! String
+            let time = dicContainer["time"] as? Int
+            
+            array.append(Step(number: number, img: img, text: text, time: time))
         }
         return array
     }

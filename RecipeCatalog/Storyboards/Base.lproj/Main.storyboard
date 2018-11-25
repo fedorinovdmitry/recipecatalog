@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="35a-0g-Hqy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="35a-0g-Hqy">
     <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -237,7 +237,7 @@
                                             <outlet property="ingredientsNamesCell" destination="tkr-zZ-SQ7" id="fqH-ua-4rN"/>
                                             <outlet property="maskViewCell" destination="c6Q-Nx-1ye" id="YAf-UQ-oXJ"/>
                                             <outlet property="recipeNameCell" destination="sGd-cl-ngf" id="Wdy-4e-pzb"/>
-                                            <segue destination="rf3-Dc-DTX" kind="show" id="8Ky-Ie-tbs"/>
+                                            <segue destination="rf3-Dc-DTX" kind="show" identifier="toRecipe" id="8Ky-Ie-tbs"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -698,6 +698,7 @@
                             <constraint firstItem="BVq-ig-tpQ" firstAttribute="top" secondItem="FmX-NZ-YbX" secondAttribute="top" constant="2" id="oHZ-Dr-yNJ"/>
                             <constraint firstItem="iI6-MK-Zm1" firstAttribute="centerX" secondItem="FmX-NZ-YbX" secondAttribute="centerX" id="t04-WU-Xoi"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="ADS-Z9-27c"/>
                     </view>
                     <connections>
                         <outlet property="backgroundView" destination="FmX-NZ-YbX" id="bNX-Id-Zjf"/>

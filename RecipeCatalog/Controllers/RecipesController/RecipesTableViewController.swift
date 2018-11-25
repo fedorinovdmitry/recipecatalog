@@ -111,6 +111,17 @@ extension RecipesTableViewController: UITableViewDataSource {
     }
 }
 
-extension RecipesTableViewController: UITabBarDelegate{
+extension RecipesTableViewController: UITableViewDelegate {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toRecipe" {
+            let destination = segue.destination as? RecipeMainConrollerTableViewController
+            if let selectedRow = recipeTable.indexPathForSelectedRow?.row {
+                destination?.recipe = arrayRec[selectedRow]
+            }
+        }
+    }
+}
+
+extension RecipesTableViewController: UITabBarDelegate {
     
 }

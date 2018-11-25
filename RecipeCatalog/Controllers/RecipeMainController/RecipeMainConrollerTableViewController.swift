@@ -10,23 +10,60 @@ import UIKit
 
 final class RecipeMainConrollerTableViewController: UIViewController {
 
+
     //MARK: - Constants
+    
     let arrayRec = [("Beer, beer beer", "1:15:00"), ("One, two, one", "1:30:00")]
     
+    
     //MARK: - Variables
+    
     private var isRecipeActive = false
     private var isTimerActive = false
     
+    
     //MARK: - Outlets
+    
     @IBOutlet weak var recipeTable: UITableView!
 
     @IBOutlet weak var timerConstraint: NSLayoutConstraint!
     
+    
+    //MARK: - Public Properties
+    
+    var recipe: Recipe? = nil
+    
     //MARK: - LifeStyle ViewController
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         recipeTable.backgroundColor = ThemAppearance.backgroundColor.uiColor()
+        
+        if let recipe = recipe{
+            print(recipe.title)
+            if let catArr = recipe.arrayIdOfCategories {
+                print("категории рецепта:")
+                for cat in catArr {
+                    print(cat)
+                }
+            }
+            if let parArr = recipe.arrayIdParameters {
+                print("ингредиенты рецепта:")
+                for par in parArr {
+                    print(par)
+                }
+            }
+            
+            print("шаги рецепта:")
+            for step in recipe.getStepArray() {
+                print(step)
+            }
+            
+            
+        }
+        
     }
+    
     
     //MARK: - Private methods
     
@@ -70,7 +107,9 @@ final class RecipeMainConrollerTableViewController: UIViewController {
     }
 }
 
+
 // MARK: - Table view data source
+
 extension RecipeMainConrollerTableViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
