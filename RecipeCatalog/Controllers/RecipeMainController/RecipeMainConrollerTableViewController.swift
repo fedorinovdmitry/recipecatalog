@@ -58,38 +58,25 @@ final class RecipeMainConrollerTableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        configureController()
+        
+    }
+    
+    
+    //MARK: - Private methods
+    
+    private func configureController() {
         recipeTable.backgroundColor = ThemAppearance.backgroundColor.uiColor()
         cellTimerSetup()
-        
         if let recipe = recipe{
-            print(recipe.title)
-            
-            if let catArr = recipe.arrayIdOfCategories {
-                print("категории рецепта:")
-                for cat in catArr {
-                    
-                    print(cat)
-                }
-            }
+            self.navigationItem.title = recipe.title
             if let parArr = recipe.arrayIdParameters {
-                print("ингредиенты рецепта:")
-                for par in parArr {
-                    print(par)
-                    ingridiends.append(par)
-                }
+                ingridiends = parArr
             }
-            
-            print("шаги рецепта:")
-            for step in recipe.getStepArray() {
-                print(step)
-                steps.append(step)
-            }
+            steps = recipe.getStepArray()
             recipeTable.reloadData()
         }
     }
-    
-    //MARK: - Private methods
     
     private func cellTimerSetup() {
         
@@ -125,7 +112,7 @@ final class RecipeMainConrollerTableViewController: UIViewController {
     }
     
     private func timerConstructor(initSeconds: Int) -> String {
-
+        
         var hours = 0
         var minuts = 0
         var seconds = 0
@@ -135,7 +122,7 @@ final class RecipeMainConrollerTableViewController: UIViewController {
         tmp = initSeconds / 60
         minuts = tmp % 60
         hours = tmp / 60
-
+        
         return toStringTimer(hours) + ":" + toStringTimer(minuts) + ":" + toStringTimer(seconds)
     }
     
@@ -161,10 +148,11 @@ final class RecipeMainConrollerTableViewController: UIViewController {
             self.view.layoutIfNeeded()
         }
     }
-//----------------------------------------------------------------------------
+    //----------------------------------------------------------------------------
     
-    private func configureTitleCell(with indexPath:Int, cell:RecipeTitleTableViewCell) -> RecipeTitleTableViewCell {
-        
+    private func configureTitleCell(cell:RecipeTitleTableViewCell) -> RecipeTitleTableViewCell {
+        guard let recipe = recipe else { return cell}
+        cell.titleRecLable.text = recipe.title
         if isRecipeActive {
             cell.letCookButton.setTitle("Прекратить готовить", for: .normal)
         }
@@ -202,10 +190,10 @@ final class RecipeMainConrollerTableViewController: UIViewController {
         return cell
     }
     
-    private func configurePartCell(with indexPath:Int, cell:RecipeTableViewCell) -> RecipeTableViewCell {
+    private func configurePartCell(with indexPathRow:Int, cell:RecipeTableViewCell) -> RecipeTableViewCell {
         
         // смещение массива этапов относительно прототипов ячейки
-        let offset = indexPath - 3
+        let offset = indexPathRow - 3
         
         cell.titleLableCell.text = "Этап " + String(steps[offset].number)
         
@@ -230,8 +218,8 @@ final class RecipeMainConrollerTableViewController: UIViewController {
             cell.beginStopButton.tag = stepTimer
         }
         else {
-            cell.timerLable.text = "00:00:00"
-            cell.beginStopButton.isEnabled = false
+            cell.timerLable.isHidden = true
+            cell.beginStopButton.isHidden = true
         }
         
         if isRecipeActive == false {
@@ -242,6 +230,17 @@ final class RecipeMainConrollerTableViewController: UIViewController {
         
         cell.recipetLableCell.text = recipeStepText
         
+        return cell
+    }
+    
+    private func configureImageCell(cell:ImageRecipeTableViewCell) -> ImageRecipeTableViewCell {
+        guard let recipe = recipe else { return cell }
+        cell.imageViewCell.image = UIImage(named: "noPhoto")
+        delegatWorkWithAlomofire.downloadImage(url: recipe.url) { (image) in
+            DispatchQueue.main.async {
+                cell.imageViewCell.image = image
+            }
+        }
         return cell
     }
     
@@ -284,9 +283,9 @@ extension RecipeMainConrollerTableViewController: UITableViewDataSource {
         
         switch indexPath.row {
         case 0:
-            return configureTitleCell(with: indexPath.row, cell: titleCell)
+            return configureTitleCell(cell: titleCell)
         case 1:
-            return imageCell
+            return configureImageCell(cell: imageCell)
         case 2:
             return configureIngridCell(with: indexPath.row, cell: ingridientsCell)
         case 3...:
