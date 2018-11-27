@@ -125,10 +125,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c6Q-Nx-1ye">
-                                                    <rect key="frame" x="32.666666666666657" y="2" width="349" height="118"/>
+                                                    <rect key="frame" x="32.666666666666657" y="2" width="349" height="122"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconsRec" translatesAutoresizingMaskIntoConstraints="NO" id="7h3-r1-xJe">
-                                                            <rect key="frame" x="5" y="4" width="110" height="110"/>
+                                                            <rect key="frame" x="5" y="6" width="110" height="110"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="110" id="KXB-qB-Zwl"/>
                                                                 <constraint firstAttribute="width" constant="110" id="uaV-hm-H1Y"/>
@@ -146,9 +146,9 @@
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ингридиенты:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkr-zZ-SQ7">
-                                                            <rect key="frame" x="123" y="63" width="218" height="21"/>
-                                                            <fontDescription key="fontDescription" name="Verdana-Italic" family="Verdana" pointSize="17"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ингридиенты:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkr-zZ-SQ7">
+                                                            <rect key="frame" x="123" y="65" width="218" height="19.666666666666671"/>
+                                                            <fontDescription key="fontDescription" name="Verdana-Italic" family="Verdana" pointSize="16"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -198,14 +198,14 @@
                                                         <constraint firstItem="tkr-zZ-SQ7" firstAttribute="leading" secondItem="7h3-r1-xJe" secondAttribute="trailing" constant="8" id="Glc-g7-YO1"/>
                                                         <constraint firstItem="Nic-en-gFo" firstAttribute="leading" secondItem="K9C-LO-gI1" secondAttribute="trailing" constant="2" id="Ni7-WQ-2pY"/>
                                                         <constraint firstItem="sGd-cl-ngf" firstAttribute="top" secondItem="c6Q-Nx-1ye" secondAttribute="top" constant="8" id="Oxb-ZA-7we"/>
-                                                        <constraint firstItem="tkr-zZ-SQ7" firstAttribute="top" secondItem="zY3-Ef-1sG" secondAttribute="bottom" constant="8" id="PDg-li-EiR"/>
+                                                        <constraint firstItem="tkr-zZ-SQ7" firstAttribute="top" secondItem="zY3-Ef-1sG" secondAttribute="bottom" constant="10" id="PDg-li-EiR"/>
                                                         <constraint firstItem="7h3-r1-xJe" firstAttribute="centerY" secondItem="c6Q-Nx-1ye" secondAttribute="centerY" id="Sdk-tu-o44"/>
                                                         <constraint firstItem="zY3-Ef-1sG" firstAttribute="top" secondItem="sGd-cl-ngf" secondAttribute="bottom" constant="4" id="ZkI-XA-uW5"/>
                                                         <constraint firstItem="K9C-LO-gI1" firstAttribute="leading" secondItem="7h3-r1-xJe" secondAttribute="trailing" constant="111" id="cPf-Nq-Uwb"/>
                                                         <constraint firstItem="gyR-9u-Uca" firstAttribute="leading" secondItem="Nic-en-gFo" secondAttribute="trailing" constant="2" id="cd8-JY-9Ew"/>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="118" id="eTV-ME-ZMW"/>
                                                         <constraint firstItem="gyR-9u-Uca" firstAttribute="top" secondItem="sGd-cl-ngf" secondAttribute="bottom" constant="4" id="fYC-n2-l6d"/>
-                                                        <constraint firstAttribute="height" constant="118" id="iAK-NF-pY5"/>
+                                                        <constraint firstAttribute="height" constant="122" id="iAK-NF-pY5"/>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="349" id="jhe-Lh-TFI"/>
                                                         <constraint firstItem="K9C-LO-gI1" firstAttribute="top" secondItem="sGd-cl-ngf" secondAttribute="bottom" constant="4" id="krK-Xe-GWk"/>
                                                         <constraint firstItem="sGd-cl-ngf" firstAttribute="leading" secondItem="7h3-r1-xJe" secondAttribute="trailing" constant="8" id="mJT-rp-KlY"/>

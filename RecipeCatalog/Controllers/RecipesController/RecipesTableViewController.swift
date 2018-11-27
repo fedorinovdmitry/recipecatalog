@@ -53,6 +53,7 @@ class RecipesTableViewController: UIViewController {
     /// - cell - сама ячейка
     private func configureCell(with indexPath:Int, cell:RecipesTableViewCell) -> RecipesTableViewCell {
         let recipe = arrayRec[indexPath]
+        var ingridShortList = "Основные ингридиенты: "
         cell.recipeNameCell.text = recipe.title
         cell.imageViewCell.image = UIImage(named: "noPhoto")
         delegatWorkWithAlomofire.downloadImage(url: recipe.url) { (image) in
@@ -60,7 +61,26 @@ class RecipesTableViewController: UIViewController {
                 cell.imageViewCell.image = image
             }
         }
+        
+        if let ingridients = recipe.arrayIdParameters {
+            for ingrid in 0...ingridients.count - 1 {
+                if ingrid < 2 {
+                    ingridShortList = ingridShortList + ingridients[ingrid].title
+                }
+                if ingrid == 1 || ingrid == ingridients.count - 1 {
+                    ingridShortList = ingridShortList + "."
+                    break
+                }
+                else {
+                    ingridShortList = ingridShortList + ", "
+                }
+            }
+        }
+        cell.ingredientsNamesCell.text = ingridShortList
+        
         complexitySwitch(complexity: recipe.complexity, cell: cell)
+        
+        
         return cell
     }
     
