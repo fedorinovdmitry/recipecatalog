@@ -23,3 +23,8 @@ struct Step {
         self.time = time
     }
 }
+extension Step: Comparable{
+    static func < (lhs: Step, rhs: Step) -> Bool {
+        return lhs.number < rhs.number
+    }
+}

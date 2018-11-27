@@ -21,8 +21,12 @@ struct Recipe {
     let complexity: Int
     let url: String
     var arrayIdOfCategories: [Category]? = nil
+    //TODO сделать сортировку ингредиентов
     var arrayIdParameters: [Ingredient]? = nil
     private var arrayOfSteps: [Step]? = nil
+    
+    var searchMatch: RecipeMatchStatus = .noMatch
+    
     /// - parameter snapshot: снимок бд в json формате
     init(snapshot: DataSnapshot) {
         let json = snapshot.value as! [String:AnyObject]
@@ -45,15 +49,9 @@ struct Recipe {
     }
     /// возвращает структурированый массив с шагами рецепта по порядку
     func getStepArray () -> [Step] {
-        var arr: [Step] = [Step]()
+        let arr: [Step] = [Step]()
         if let arrayOfSteps = self.arrayOfSteps {
-            for _ in 0...arrayOfSteps.count - 1{
-                arr.append(Step(number: 0, img: nil, text: "", time: nil))
-            }
-            for step in arrayOfSteps {
-                let index = step.number - 1
-                arr[index] = step
-            }
+            return arrayOfSteps.sorted()
         }
         return arr
     }
@@ -81,7 +79,7 @@ struct Recipe {
             let title = dicContainer["title"] as! String
             array.append(Ingredient(id: id, title: title, quantity: quantity))
         }
-        return array
+        return array.sorted()
     }
     /// Парсит джсон шагов
     /// - parameter steps: снимок пункта шаги в рецепте в json формате
@@ -99,4 +97,9 @@ struct Recipe {
         return array
     }
     
+}
+extension Recipe: Equatable{
+    static func == (lhs: Recipe, rhs: Recipe) -> Bool{
+        return lhs.id == rhs.id
+    }
 }

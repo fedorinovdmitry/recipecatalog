@@ -15,6 +15,8 @@ protocol RequestsToFireBaseFactory {
     func takeListOfRecipes(with completion: @escaping ([Recipe]) -> Void)
     func takeListOfRecipes(idCategory: String,
                            completion: @escaping ([Recipe]) -> Void)
+    func takeListOfAllParametrs(completion: @escaping ([Ingredient]) -> Void)
+    func searchRecipe(with ingredients:[Ingredient], completion: @escaping ([Recipe]) -> Void)
 }
 
 /** Класс реализующий запросы к Firebase */
@@ -76,4 +78,28 @@ class RequestsToFireBase: RequestsToFireBaseFactory {
             completion(recipeArray)
         }
     }
+    
+    ///получение списка всех ингредиентов
+    /// - completion - замыкание где будет обработан список ингредиентов
+    func takeListOfAllParametrs(completion: @escaping ([Ingredient]) -> Void) {
+        ref = Database.database().reference(withPath: "ingredients")
+        ref.observe(.value) { (snapshot) in
+            var ingredientArray = [Ingredient]()
+            for item in snapshot.children {
+                let ingredient = Ingredient(snapshot: item as! DataSnapshot)
+                ingredientArray.append(ingredient)
+            }
+            completion(ingredientArray)
+        }
+    }
+    
+    
+    ///получение списка всех реептов с заданными параметрами отсортироваными по принциппу полное совпадение -> совпадение -> частичное совпадение
+    /// - completion - замыкание где будет обработан список новых рецептов
+    func searchRecipe(with ingredients:[Ingredient], completion: @escaping ([Recipe]) -> Void)  {
+        takeListOfRecipes { (recipes) in
+            completion(SearchRecipeLogic.search(ingredients: ingredients, recipes: recipes))
+        }
+    }
+    
 }
