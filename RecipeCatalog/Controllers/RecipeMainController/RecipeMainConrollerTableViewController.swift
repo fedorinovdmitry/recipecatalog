@@ -9,35 +9,58 @@
 import UIKit
 
 final class RecipeMainConrollerTableViewController: UIViewController {
-
-
     //MARK: - Constants
-    
-    let arrayRec = [("Beer, beer beer", "1:15:00"), ("One, two, one", "1:30:00")]
-    
     
     //MARK: - Variables
     
     private var isRecipeActive = false
     private var isTimerActive = false
+    private var timer = Timer()
+    private var timeInSeconds = 0
+    private var resumeTapped = false
     
+    
+    private var steps: [Step] = []
     
     //MARK: - Outlets
     
     @IBOutlet weak var recipeTable: UITableView!
-
+    
     @IBOutlet weak var timerConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var stepLable: UILabel!
+    @IBOutlet weak var timerLable: UILabel!
+    
+    @IBOutlet weak var backgroundTimerView: UIView!
+    @IBOutlet weak var maskView: UIView!
+    
+    @IBOutlet weak var done: UIButton!
+    @IBOutlet weak var pause: UIButton!
     
     //MARK: - Public Properties
-    
     var recipe: Recipe? = nil
+    lazy var delegatWorkWithAlomofire = NetworkBornFactory().makeRequestsToAlomofire()
     
     //MARK: - LifeStyle ViewController
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        let buttonRadius: CGFloat = 20
+        
+        done.layer.cornerRadius = buttonRadius
+        pause.layer.cornerRadius = buttonRadius
+        
+        maskView.layer.cornerRadius = 30
+        maskView.layer.shadowOpacity = 0.4
+        maskView.layer.shadowRadius = 5
+        maskView.layer.shadowOffset = CGSize(width: 0, height: 4)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         recipeTable.backgroundColor = ThemAppearance.backgroundColor.uiColor()
+        cellTimerSetup()
         
         if let recipe = recipe{
             print(recipe.title)
@@ -57,33 +80,94 @@ final class RecipeMainConrollerTableViewController: UIViewController {
             print("шаги рецепта:")
             for step in recipe.getStepArray() {
                 print(step)
+                steps.append(step)
             }
-            
-            
+            recipeTable.reloadData()
         }
-        
     }
-    
     
     //MARK: - Private methods
     
+    private func cellTimerSetup() {
+        
+        backgroundTimerView.backgroundColor = UIColor.clear
+        maskView.backgroundColor = ThemAppearance.backgroundCellColor.uiColor()
+        
+        stepLable.textColor = ThemAppearance.textColor.uiColor()
+        timerLable.textColor = ThemAppearance.textColor.uiColor()
+    }
+    
+    //MARK: - TIMER
+    @objc func initTimer(sender: AnyObject) {
+        if let getTime = sender.tag {
+            timeInSeconds = getTime
+            if !isTimerActive {
+                runTimer()
+            }
+        }
+    }
+    
+    private func runTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(RecipeMainConrollerTableViewController.timerSetting), userInfo: nil, repeats: true)
+        isTimerActive = true
+    }
+    
+    @objc private func timerSetting(){
+        
+        if timeInSeconds > 0 {
+            timerLable.text = timerConstructor(initSeconds: timeInSeconds)
+            timeInSeconds -= 1
+        }
+    }
+    
+    private func timerConstructor(initSeconds: Int) -> String {
+
+        var hours = 0
+        var minuts = 0
+        var seconds = 0
+        var tmp = 0
+        
+        seconds = initSeconds % 60
+        tmp = initSeconds / 60
+        minuts = tmp % 60
+        hours = tmp / 60
+
+        return toStringTimer(hours) + ":" + toStringTimer(minuts) + ":" + toStringTimer(seconds)
+    }
+    
+    private func toStringTimer(_ timePart: Int) -> String {
+        if timePart < 10 {
+            return "0" + String(timePart)
+        }
+        else {
+            return String(timePart)
+        }
+    }
+    
     private func showTimer() {
-        timerConstraint.constant = 0
+        
+        if isRecipeActive {
+            timerConstraint.constant = 3
+        }
+        else {
+            timerConstraint.constant = -72
+        }
         
         UIView.animate(withDuration: 0.3){
             self.view.layoutIfNeeded()
         }
     }
+//----------------------------------------------------------------------------
     
     private func configureTitleCell(with indexPath:Int, cell:RecipeTitleTableViewCell) -> RecipeTitleTableViewCell {
         
         if isRecipeActive {
             cell.letCookButton.setTitle("Прекратить готовить", for: .normal)
-            showTimer()
         }
         else {
             cell.letCookButton.setTitle("Приготовить", for: .normal)
         }
+        showTimer()
         return cell
     }
     
@@ -96,17 +180,62 @@ final class RecipeMainConrollerTableViewController: UIViewController {
         }
         recipeTable.reloadData()
     }
-        
+    
     private func configurePartCell(with indexPath:Int, cell:RecipeTableViewCell) -> RecipeTableViewCell {
         
-        cell.titleLableCell.text = "Этап " + String(indexPath - 1)
-        let recipe = arrayRec[indexPath-2]
-        cell.recipetLableCell.text = recipe.0
+        // смещение массива этапов относительно прототипов ячейки
+        let offset = indexPath - 3
+        
+        cell.titleLableCell.text = "Этап " + String(steps[offset].number)
+        
+        let recipeStepText = steps[offset].text
+        let recipeStepImage = steps[offset].img
+        let recipeStepTime = steps[offset].time
+        
+        if let stepImage = recipeStepImage {
+            delegatWorkWithAlomofire.downloadImage(url: stepImage) { (image) in
+                DispatchQueue.main.async {
+                    cell.imageViewCell.image = image
+                }
+            }
+        }
+        else {
+            cell.imageHConstraint.constant = 0
+        }
+        
+        if let stepTimer = recipeStepTime {
+            cell.beginStopButton.isEnabled = true
+            cell.timerLable.text = timerConstructor(initSeconds: stepTimer)
+            cell.beginStopButton.tag = stepTimer
+        }
+        else {
+            cell.timerLable.text = "00:00:00"
+            cell.beginStopButton.isEnabled = false
+        }
+        
+        cell.beginStopButton.addTarget(self, action: #selector(initTimer(sender:)), for: .touchUpInside)
+        
+        cell.recipetLableCell.text = recipeStepText
         
         return cell
     }
+    
+    @IBAction func doneButton(_ sender: Any) {
+        timer.invalidate()
+        timeInSeconds = 0
+        isTimerActive = false
+    }
+    
+    @IBAction func pauseButton(_ sender: Any) {
+        if resumeTapped == false {
+            timer.invalidate()
+            resumeTapped = true
+        } else {
+            runTimer()
+            resumeTapped = false
+        }
+    }
 }
-
 
 // MARK: - Table view data source
 
@@ -118,7 +247,7 @@ extension RecipeMainConrollerTableViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 4
+        return 3 + steps.count
     }
     
     

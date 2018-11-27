@@ -15,8 +15,11 @@ class TimerViewController: UIViewController {
     private let calendar = Calendar.current
     
     //MARK: - Variables
-    private var time = 110 //------------
+    var time = 110 //------------
+    var step = "Step..."
     private var timer = Timer()
+    
+//    var recipeViewController: RecipeMainConrollerTableViewController?
     
     
     //MARK: - Outlets
@@ -47,10 +50,17 @@ class TimerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         cellSetup()
+        
     }
     
     //MARK: - Navigation
+    
+//    func saveContrainerViewRefference(vc: RecipeMainConrollerTableViewController){
+//
+//        self.recipeViewController = vc
+//    }
     
     //MARK: - Private methods
     private func cellSetup() {
@@ -95,6 +105,8 @@ class TimerViewController: UIViewController {
     }
     
     @IBAction func doneAction(_ sender: Any) {
+        
+        stepLable.text = step
         
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(TimerViewController.timerSetting), userInfo: nil, repeats: true)
     }
