@@ -11,7 +11,11 @@ import UIKit
 class RecipesTableViewController: UIViewController {
     
     //MARK: - Public Properties
+    
     var idCategory: String? = nil
+    var isSearch: Bool = false
+    var arrayRec = [Recipe]()
+    
     
     //MARK: - Variables
     //внедрение делегата по работе с фаербезом
@@ -19,14 +23,15 @@ class RecipesTableViewController: UIViewController {
     //внедрение делегата по работе с Аламофаером
     lazy var delegatWorkWithAlomofire = NetworkBornFactory().makeRequestsToAlomofire()
     
-    private var arrayCat = [Category]()
-    private var arrayRec = [Recipe]()
     
     //MARK: - Outlets
+    
     @IBOutlet weak var recipeTable: UITableView!
     @IBOutlet weak var findButton: UIButton!
     
+    
     //MARK: - LifeStyle ViewController
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,7 +39,11 @@ class RecipesTableViewController: UIViewController {
         
         findButton.createFloatingActionButton()
         
-        workwithFireBase()
+        if isSearch == false {
+            workwithFireBase()
+        }else {
+            findButton.isHidden = true
+        }
     }
     
     //MARK: - Private methods
@@ -51,8 +60,8 @@ class RecipesTableViewController: UIViewController {
     ///конфигурация ячейки
     /// - indexPath - номер ячейки
     /// - cell - сама ячейка
-    private func configureCell(with indexPath:Int, cell:RecipesTableViewCell) -> RecipesTableViewCell {
-        let recipe = arrayRec[indexPath]
+    private func configureCell(with indexPathRow:Int, cell:RecipesTableViewCell) -> RecipesTableViewCell {
+        let recipe = arrayRec[indexPathRow]
         var ingridShortList = "Основные ингридиенты: "
         cell.recipeNameCell.text = recipe.title
         cell.imageViewCell.image = UIImage(named: "noPhoto")
