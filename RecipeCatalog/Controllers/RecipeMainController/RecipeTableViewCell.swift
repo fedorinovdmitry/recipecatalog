@@ -17,21 +17,25 @@ class RecipeTableViewCell: UITableViewCell {
     @IBOutlet weak var imageViewCell: UIImageView!
     @IBOutlet weak var recipetLableCell: UILabel!
     @IBOutlet weak var beginStopButton: UIButton!
-    @IBOutlet weak var pauseButton: UIButton!
+   
+    
+    @IBOutlet weak var timerLable: UILabel!
+    @IBOutlet weak var imageHConstraint: NSLayoutConstraint!
+    
     
     override func layoutSubviews() {
         super.layoutSubviews()
         
         let radius: CGFloat = 42
-        let buttonRadius: CGFloat = 20
+        
         
         maskViewCell.layer.cornerRadius = radius
         
         imageViewCell.layer.masksToBounds = true
         imageViewCell.layer.cornerRadius = radius
         
-        beginStopButton.layer.cornerRadius = buttonRadius
-        pauseButton.layer.cornerRadius = buttonRadius
+        beginStopButton.layer.cornerRadius = 25
+        
         
         maskViewCell.layer.shadowOpacity = 0.4
         maskViewCell.layer.shadowRadius = 5
@@ -55,8 +59,8 @@ class RecipeTableViewCell: UITableViewCell {
         maskViewCell.backgroundColor = ThemAppearance.backgroundCellColor.uiColor()
         
         beginStopButton.backgroundColor = ThemAppearance.backgroundButtonColor.uiColor()
-        pauseButton.backgroundColor = ThemAppearance.backgroundButtonColor.uiColor()
         
+        timerLable.textColor = ThemAppearance.textColor.uiColor()
         titleLableCell.textColor = ThemAppearance.textColor.uiColor()
         recipetLableCell.textColor = ThemAppearance.textColor.uiColor() 
     }

@@ -19,7 +19,6 @@
 		024C1F6A2192F4F500C69999 /* IngridientsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024C1F692192F4F500C69999 /* IngridientsTableViewCell.swift */; };
 		024C1F6C2192F51400C69999 /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024C1F6B2192F51400C69999 /* RecipeTableViewCell.swift */; };
 		024C1F702193033C00C69999 /* NavigationCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024C1F6F2193033C00C69999 /* NavigationCategoryViewController.swift */; };
-		0261818521A8A5E50071AC82 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0261818421A8A5E50071AC82 /* TimerViewController.swift */; };
 		0292AF0F2189A89500A6A4DB /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0292AF0E2189A89500A6A4DB /* CategoryTableViewCell.swift */; };
 		0292AF142189B71A00A6A4DB /* RecipesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0292AF132189B71A00A6A4DB /* RecipesTableViewController.swift */; };
 		0292AF162189B78500A6A4DB /* RecipesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0292AF152189B78500A6A4DB /* RecipesTableViewCell.swift */; };
@@ -93,7 +92,6 @@
 		024C1F692192F4F500C69999 /* IngridientsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngridientsTableViewCell.swift; sourceTree = "<group>"; };
 		024C1F6B2192F51400C69999 /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
 		024C1F6F2193033C00C69999 /* NavigationCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCategoryViewController.swift; sourceTree = "<group>"; };
-		0261818421A8A5E50071AC82 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		0292AF0E2189A89500A6A4DB /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		0292AF132189B71A00A6A4DB /* RecipesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesTableViewController.swift; sourceTree = "<group>"; };
 		0292AF152189B78500A6A4DB /* RecipesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesTableViewCell.swift; sourceTree = "<group>"; };
@@ -202,7 +200,6 @@
 				024C1F692192F4F500C69999 /* IngridientsTableViewCell.swift */,
 				024C1F6B2192F51400C69999 /* RecipeTableViewCell.swift */,
 				021BC7BB21A406FC006F9A7E /* RecipeTitleTableViewCell.swift */,
-				0261818421A8A5E50071AC82 /* TimerViewController.swift */,
 			);
 			path = RecipeMainController;
 			sourceTree = "<group>";
@@ -667,7 +664,6 @@
 				2DD0E23721A46B5E00F1972F /* ModulesFactory.swift in Sources */,
 				2DD0E23D21A470E500F1972F /* CoordinatorFactoryProtocol.swift in Sources */,
 				2D98C7C8218734E50017E50A /* AppDelegate.swift in Sources */,
-				0261818521A8A5E50071AC82 /* TimerViewController.swift in Sources */,
 				2DD0E24021A47FA500F1972F /* MainCoordinator.swift in Sources */,
 				2DD0E21F21A42AAC00F1972F /* Coordinatable.swift in Sources */,
 				024C1F6A2192F4F500C69999 /* IngridientsTableViewCell.swift in Sources */,
