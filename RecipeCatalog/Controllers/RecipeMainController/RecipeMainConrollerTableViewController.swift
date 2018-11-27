@@ -19,7 +19,7 @@ final class RecipeMainConrollerTableViewController: UIViewController {
     private var timeInSeconds = 0
     private var resumeTapped = false
     
-    
+    private var ingridiends: [Ingredient] = []
     private var steps: [Step] = []
     
     //MARK: - Outlets
@@ -64,9 +64,11 @@ final class RecipeMainConrollerTableViewController: UIViewController {
         
         if let recipe = recipe{
             print(recipe.title)
+            
             if let catArr = recipe.arrayIdOfCategories {
                 print("категории рецепта:")
                 for cat in catArr {
+                    
                     print(cat)
                 }
             }
@@ -74,6 +76,7 @@ final class RecipeMainConrollerTableViewController: UIViewController {
                 print("ингредиенты рецепта:")
                 for par in parArr {
                     print(par)
+                    ingridiends.append(par)
                 }
             }
             
@@ -98,6 +101,7 @@ final class RecipeMainConrollerTableViewController: UIViewController {
     }
     
     //MARK: - TIMER
+    //TODO: - вынести таймер из контроллера
     @objc func initTimer(sender: AnyObject) {
         if let getTime = sender.tag {
             timeInSeconds = getTime
@@ -181,6 +185,23 @@ final class RecipeMainConrollerTableViewController: UIViewController {
         recipeTable.reloadData()
     }
     
+    private func configureIngridCell(with indexPath:Int, cell:IngridientsTableViewCell) -> IngridientsTableViewCell {
+        var count = 0
+        var text: String = ""
+        for ingrid in ingridiends {
+            count += 1
+            text = text + String(count) + ") " + cell.ingridientsText.text + ingrid.title + "\n"
+            
+            if let quantity = ingrid.quantity {
+                
+                text = text + quantity + "\n"
+            }
+        }
+        cell.ingridientsText.text = text
+        
+        return cell
+    }
+    
     private func configurePartCell(with indexPath:Int, cell:RecipeTableViewCell) -> RecipeTableViewCell {
         
         // смещение массива этапов относительно прототипов ячейки
@@ -213,6 +234,10 @@ final class RecipeMainConrollerTableViewController: UIViewController {
             cell.beginStopButton.isEnabled = false
         }
         
+        if isRecipeActive == false {
+            cell.beginStopButton.isEnabled = false
+        }
+        
         cell.beginStopButton.addTarget(self, action: #selector(initTimer(sender:)), for: .touchUpInside)
         
         cell.recipetLableCell.text = recipeStepText
@@ -238,18 +263,12 @@ final class RecipeMainConrollerTableViewController: UIViewController {
 }
 
 // MARK: - Table view data source
-
 extension RecipeMainConrollerTableViewController: UITableViewDataSource {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return 3 + steps.count
     }
-    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -269,7 +288,7 @@ extension RecipeMainConrollerTableViewController: UITableViewDataSource {
         case 1:
             return imageCell
         case 2:
-            return ingridientsCell
+            return configureIngridCell(with: indexPath.row, cell: ingridientsCell)
         case 3...:
             return configurePartCell(with: indexPath.row, cell: recipeCell)
         default:

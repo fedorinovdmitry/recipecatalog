@@ -15,6 +15,10 @@ class IngridientsTableViewCell: UITableViewCell {
     @IBOutlet weak var lineViewCell: UIView!
     @IBOutlet weak var addToBasketButtonCell: UIButton!
     
+    @IBOutlet weak var ingridientsText: UITextView!
+    @IBOutlet weak var ingridientsPartsText: UITextView!
+    
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -47,6 +51,14 @@ class IngridientsTableViewCell: UITableViewCell {
         maskViewCell.backgroundColor = ThemAppearance.backgroundCellColor.uiColor()
         lineViewCell.backgroundColor = ThemAppearance.textColor.uiColor()
         addToBasketButtonCell.backgroundColor = ThemAppearance.backgroundButtonColor.uiColor()
+        
+        ingridientsText.isEditable = false
+        ingridientsText.textColor = ThemAppearance.textColor.uiColor()
+        ingridientsText.backgroundColor = ThemAppearance.backgroundCellColor.uiColor()
+        
+        ingridientsPartsText.isEditable = false
+        ingridientsPartsText.textColor = ThemAppearance.textColor.uiColor()
+        ingridientsPartsText.backgroundColor = ThemAppearance.backgroundCellColor.uiColor()
         
         titleLableCell.textColor = ThemAppearance.textColor.uiColor()
     }
