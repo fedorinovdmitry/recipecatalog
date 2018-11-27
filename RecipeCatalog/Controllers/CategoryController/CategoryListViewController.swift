@@ -46,13 +46,27 @@ class CategoryListViewController: UIViewController {
             self?.arrayCat = categories
             self?.categoryTable.reloadData()
         }
+        delegateWorkWithFirebase.takeListOfAllParametrs { [weak self] (ingredients) in
+            
+//            for i in ingredients {
+//                print(i.id)
+//            }
+            let arr = [Ingredient(id: "10008", title: "соль", quantity: "Много"), Ingredient(id: "10006", title: "Спаггети", quantity: "ыуц"), Ingredient(id: "10009", title: "Бекон", quantity: "ыуц")]
+            
+            self?.delegateWorkWithFirebase.searchRecipe(with: arr) { (recipes) in
+                for i in recipes {
+                    print(i.id)
+                }
+            }
+            
+        }
     }
     
     ///конфигурация ячейки
     /// - indexPath - номер ячейки
     /// - cell - сама ячейка
-    private func configCell(with indexPath:Int, cell:CategoryTableViewCell) -> CategoryTableViewCell {
-        let category = arrayCat[indexPath]
+    private func configCell(with indexPathRow:Int, cell:CategoryTableViewCell) -> CategoryTableViewCell {
+        let category = arrayCat[indexPathRow]
         cell.imageCell.image = UIImage(named: "noPhoto")
         if let url = category.url {
             delegatWorkWithAlomofire.downloadImage(url: url){ (image) in
@@ -61,7 +75,7 @@ class CategoryListViewController: UIViewController {
                 }
             }
         }
-        cell.labelCell.text = arrayCat[indexPath].title
+        cell.labelCell.text = arrayCat[indexPathRow].title
         return cell
     }
 
