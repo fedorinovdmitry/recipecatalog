@@ -14,16 +14,12 @@ final class ModulesFactory {}
 extension ModulesFactory: FirstLaunchFactoryProtocol {
     func makeEnterView() -> ThemsViewController {
         let view: ThemsViewController = ThemsViewController.controllerFromStoryboard(.firstLaunch)
-        //firstlaunch
-//        EnterAssembly.assembly(with: view)
         return view
     }
 }
 extension ModulesFactory: MainCoordinatorFactoryProtocol {
     func makeCategoryListView() -> CategoryListViewController {
         let view: CategoryListViewController = CategoryListViewController.controllerFromStoryboard(.main)
-        //firstlaunch
-        //        EnterAssembly.assembly(with: view)
         return view
     }
 }

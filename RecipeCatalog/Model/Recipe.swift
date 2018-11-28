@@ -21,7 +21,6 @@ struct Recipe {
     let complexity: Int
     let url: String
     var arrayIdOfCategories: [Category]? = nil
-    //TODO сделать сортировку ингредиентов
     var arrayIdParameters: [Ingredient]? = nil
     private var arrayOfSteps: [Step]? = nil
     
