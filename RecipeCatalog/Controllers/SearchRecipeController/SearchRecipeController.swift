@@ -11,18 +11,16 @@ import UIKit
 class SearchRecipeController: UIViewController {
     
     //MARK: - Outlets
-    // Dima table stub
-    @IBOutlet weak var ingredientsTable: UITableView!
-    @IBOutlet weak var searchBut: UIButton!
-    
     //Outlet
+    @IBOutlet weak var searchBut: UIButton!
     @IBOutlet weak var myProductsTitle: UILabel!
     @IBOutlet weak var myProductsText: UITextView!
     @IBOutlet weak var myProductsMask: UIView!
     @IBOutlet weak var serchScreenBackground: UIView!
     @IBOutlet weak var findButton: UIButton!
+    @IBOutlet weak var tutorText: UILabel!
     
-    //Artem image stub
+    //image stub
     @IBOutlet weak var beer: UIImageView!
     @IBOutlet weak var chicken: UIImageView!
     @IBOutlet weak var fish: UIImageView!
@@ -36,9 +34,7 @@ class SearchRecipeController: UIViewController {
     @IBOutlet weak var sosyski: UIImageView!
     @IBOutlet weak var spagetty: UIImageView!
     
-    
     //MARK: - Private Properties
-    
     //внедрение делегата по работе с фаербезом
     private lazy var delegateWorkWithFirebase: RequestsToFireBaseFactory = NetworkBornFactory().makeRequestsToFireBase()
     //внедрение делегата по работе с аламофаером
@@ -49,7 +45,7 @@ class SearchRecipeController: UIViewController {
     private var allIngredientArr = [Ingredient]()
     private var choseIngredientArr = [Ingredient]()
     private var searchRecipes = [Recipe]()
-
+    
     private enum FireBaseWork {
         case searchRecipe
         case downloadIngredients
@@ -71,23 +67,15 @@ class SearchRecipeController: UIViewController {
         workwithFireBase(workWith: .downloadIngredients)
         
         
-        
-//        beer.image = UIImage(named: "Beer")
-//        if beer.image == UIImage(named: "Beer") {
-//            print("lkmlkjlhiohlkjnydutfgyibuhnj")
-//        }
-        
-        addPanGesture(view: beer)
+        namNeStatProgramistami()
         fileViewOrigin = beer.frame.origin
-        view.bringSubviewToFront(beer)
+        
     }
     
     //MARK: - IBAction
-    
     @IBAction func searchAction(_ sender: Any) {
         workwithFireBase(workWith: .searchRecipe)
     }
-    
     
     //MARK: - Private methods
     private func setupScreen() {
@@ -99,9 +87,11 @@ class SearchRecipeController: UIViewController {
         myProductsTitle.textColor = ThemAppearance.textColor.uiColor()
         myProductsText.backgroundColor = ThemAppearance.backgroundButtonColor.uiColor()
         myProductsText.tintColor = ThemAppearance.textColor.uiColor()
+        myProductsText.textColor = ThemAppearance.textColor.uiColor()
+        tutorText.textColor = ThemAppearance.textColor.uiColor()
     }
     
-    private func addPanGesture(view: UIView) {
+    func addPanGesture(view: UIView) {
         let pan = UIPanGestureRecognizer(target: self, action: #selector(SearchRecipeController.handlePan(sender:)))
         view.addGestureRecognizer(pan)
     }
@@ -139,17 +129,21 @@ class SearchRecipeController: UIViewController {
     
     private func deleteView(view: UIView) {
         UIView.animate(withDuration: 0.3, animations: {view.alpha = 0.0})
-       
-        if let check = view as? UIImageView {
-            if check.image == UIImage(named: "Beer") {
-                for inggrid in allIngredientArr {
-                    if inggrid.title == "Пиво" {
-                        choseIngredientArr.append(inggrid)
-                        myProductsText.text = myProductsText.text + inggrid.title + "\n"
-                    }
-                }
+        guard let check = view as? UIImageView,
+            let id = check.accessibilityValue,
+            let ingredient = giveById(id: id)
+            else { return }
+        choseIngredientArr.append(ingredient)
+        myProductsText.text = myProductsText.text + ingredient.title + "\n"
+    }
+    
+    private func giveById(id:String) -> Ingredient? {
+        for ingredient in allIngredientArr {
+            if id == ingredient.id {
+                return ingredient
             }
         }
+        return nil
     }
     
     private func workwithFireBase(workWith: FireBaseWork){
@@ -163,42 +157,8 @@ class SearchRecipeController: UIViewController {
             delegateWorkWithFirebase.takeListOfAllParametrs { [weak self] (ingredients) in
                 self?.allIngredientArr = ingredients
                 print(self!.allIngredientArr)
-                self?.ingredientsTable.reloadData()
             }
         }
-
-    }
-    
-    private func configCell(with indexPathRow:Int, cell:SearchRecipeIngredientTableCell) -> SearchRecipeIngredientTableCell {
-        let ingredient = allIngredientArr[indexPathRow]
-        cell.title.text = ingredient.title
-        return cell
-    }
-
-}
-
-
-// MARK: - Table view data source
-
-extension SearchRecipeController: UITableViewDataSource {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return allIngredientArr.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchCell", for: indexPath) as! SearchRecipeIngredientTableCell
-        
-        return configCell(with: indexPath.row, cell: cell)
-    }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        choseIngredientArr.append(allIngredientArr[indexPath.row])
-        self.showAlert(title: "Добавлен")
     }
 }
 
@@ -207,11 +167,54 @@ extension SearchRecipeController: UITableViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toListSearchRecipes" {
             let destination = segue.destination as? RecipesTableViewController
-
+            
             destination?.arrayRec = searchRecipes
             destination?.isSearch = true
-
+            
         }
     }
     
 }
+
+//жеская заглушка не смотрите на этот код пожалуйста...
+//TODO: Разобраться со скролвью в совокупности с тапрекогназером и УДАЛИТЬ НАХРЕН ЭТОТ КОД !!!!
+//extension SearchRecipeController {
+//    func namNeStatProgramistami() {
+//        beer.accessibilityValue = "10003"
+//        chicken.accessibilityValue = "10002"
+//        fish.accessibilityValue = "10021"
+//        luk.accessibilityValue = "10004"
+//        ris.accessibilityValue = "10005"
+//        water.accessibilityValue = "10001"
+//        becon.accessibilityValue = "10009"
+//        egg.accessibilityValue = "10011"
+//        slivki.accessibilityValue = "10010"
+//        solt.accessibilityValue = "10008"
+//        sosyski.accessibilityValue = "10007"
+//        spagetty.accessibilityValue = "10006"
+//        addPanGesture(view: beer)
+//        addPanGesture(view: chicken)
+//        addPanGesture(view: fish)
+//        addPanGesture(view: luk)
+//        addPanGesture(view: ris)
+//        addPanGesture(view: water)
+//        addPanGesture(view: becon)
+//        addPanGesture(view: slivki)
+//        addPanGesture(view: solt)
+//        addPanGesture(view: sosyski)
+//        addPanGesture(view: spagetty)
+//        addPanGesture(view: egg)
+//        view.bringSubviewToFront(beer)
+//        view.bringSubviewToFront(chicken)
+//        view.bringSubviewToFront(fish)
+//        view.bringSubviewToFront(luk)
+//        view.bringSubviewToFront(ris)
+//        view.bringSubviewToFront(water)
+//        view.bringSubviewToFront(becon)
+//        view.bringSubviewToFront(egg)
+//        view.bringSubviewToFront(slivki)
+//        view.bringSubviewToFront(solt)
+//        view.bringSubviewToFront(sosyski)
+//        view.bringSubviewToFront(spagetty)
+//    }
+//}

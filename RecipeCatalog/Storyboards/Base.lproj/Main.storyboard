@@ -34,13 +34,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7vD-Gu-CBs">
-                                                    <rect key="frame" x="32.666666666666657" y="2" width="349" height="118.33333333333333"/>
+                                                    <rect key="frame" x="13" y="2" width="349" height="118.33333333333333"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Category1" translatesAutoresizingMaskIntoConstraints="NO" id="6hA-2t-mrH">
                                                             <rect key="frame" x="0.0" y="0.0" width="349" height="118.33333333333333"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sBh-2j-R1A">
-                                                            <rect key="frame" x="151.66666666666669" y="92.666666666666671" width="45.333333333333343" height="24.666666666666671"/>
+                                                            <rect key="frame" x="152" y="92.666666666666671" width="45.333333333333343" height="24.666666666666671"/>
                                                             <fontDescription key="fontDescription" name="Calibri-Italic" family="Calibri" pointSize="21"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -128,7 +128,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c6Q-Nx-1ye">
-                                                    <rect key="frame" x="32.666666666666657" y="2" width="349" height="122"/>
+                                                    <rect key="frame" x="13" y="2" width="349" height="122"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconsRec" translatesAutoresizingMaskIntoConstraints="NO" id="7h3-r1-xJe">
                                                             <rect key="frame" x="5" y="6" width="110" height="110"/>
@@ -156,7 +156,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DeActiveDarkBeer" translatesAutoresizingMaskIntoConstraints="NO" id="K9C-LO-gI1">
-                                                            <rect key="frame" x="226.00000000000003" y="34" width="19" height="22"/>
+                                                            <rect key="frame" x="226" y="34" width="19" height="22"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="19" id="9Q7-DO-wTh"/>
                                                                 <constraint firstAttribute="height" constant="22" id="E4f-Am-e3W"/>
@@ -292,10 +292,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gpZ-kj-Yw2">
-                                                    <rect key="frame" x="29.666666666666657" y="2" width="355" height="140"/>
+                                                    <rect key="frame" x="10" y="2" width="355" height="140"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Закуска к пиву" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAK-9X-at3">
-                                                            <rect key="frame" x="75.333333333333314" y="21.000000000000004" width="204" height="39.333333333333343"/>
+                                                            <rect key="frame" x="75.666666666666686" y="21.000000000000004" width="204" height="39.333333333333343"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="204" id="UlA-1d-ohG"/>
                                                             </constraints>
@@ -304,7 +304,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4cy-Sz-TEC">
-                                                            <rect key="frame" x="39.333333333333314" y="80.333333333333329" width="276" height="38"/>
+                                                            <rect key="frame" x="39.666666666666657" y="80.333333333333329" width="276" height="38"/>
                                                             <color key="backgroundColor" red="0.60478884119999998" green="0.67901661390000001" blue="0.78769712049999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="276" id="Zim-K2-Lt8"/>
@@ -353,7 +353,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tIi-Rs-EeO">
-                                                    <rect key="frame" x="29.666666666666657" y="2" width="355" height="183"/>
+                                                    <rect key="frame" x="10" y="2" width="355" height="183"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ReceptZagl" translatesAutoresizingMaskIntoConstraints="NO" id="RyT-oT-rIj">
                                                             <rect key="frame" x="0.0" y="0.0" width="355" height="183"/>
@@ -395,7 +395,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZaL-MJ-4hN">
-                                                    <rect key="frame" x="29.666666666666657" y="2" width="355" height="250"/>
+                                                    <rect key="frame" x="10" y="2" width="355" height="250"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ингридиенты:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7GN-e7-P0d">
                                                             <rect key="frame" x="20" y="16.000000000000004" width="233" height="40.333333333333343"/>
@@ -411,7 +411,7 @@
                                                             </constraints>
                                                         </view>
                                                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ANp-M6-DbV">
-                                                            <rect key="frame" x="39.333333333333314" y="204" width="276" height="38"/>
+                                                            <rect key="frame" x="39.666666666666657" y="204" width="276" height="38"/>
                                                             <color key="backgroundColor" red="0.60478884119999998" green="0.67901661390000001" blue="0.78769712049999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="T00-I1-jLU"/>
@@ -491,7 +491,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3cD-bj-EdN">
-                                                    <rect key="frame" x="29.666666666666657" y="2" width="355" height="373"/>
+                                                    <rect key="frame" x="10" y="2" width="355" height="373"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Шаг 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w2n-B4-WVr">
                                                             <rect key="frame" x="12" y="16" width="85" height="40"/>
@@ -531,7 +531,7 @@
                                                             </state>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SeC-ly-sE5">
-                                                            <rect key="frame" x="107.99999999999999" y="16" width="144.33333333333331" height="40"/>
+                                                            <rect key="frame" x="108.00000000000001" y="16" width="144.33333333333337" height="40"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="o1z-1U-uuh"/>
                                                             </constraints>
@@ -724,37 +724,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5l8-VU-TrG">
-                                <rect key="frame" x="20" y="702" width="332" height="160"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchCell" id="ixj-Ht-GcN" customClass="SearchRecipeIngredientTableCell" customModule="RecipeCatalog" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="332" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ixj-Ht-GcN" id="rgE-h0-rHX">
-                                            <rect key="frame" x="0.0" y="0.0" width="332" height="43.666666666666664"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQr-ah-cNL">
-                                                    <rect key="frame" x="9" y="11" width="312" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="title" destination="NQr-ah-cNL" id="qol-eM-x73"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="Qxm-p7-pR9" id="dM0-Q2-ICd"/>
-                                    <outlet property="delegate" destination="Qxm-p7-pR9" id="Tyl-9h-hib"/>
-                                </connections>
-                            </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o8o-h1-wEq">
                                 <rect key="frame" x="0.0" y="91" width="375" height="195"/>
                                 <subviews>
@@ -770,7 +739,7 @@
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="f13-gz-fTc">
                                         <rect key="frame" x="8" y="45" width="359" height="142"/>
                                         <color key="backgroundColor" red="0.92107593789999997" green="1" blue="0.93539772330000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
@@ -842,7 +811,7 @@
                                     <constraint firstAttribute="width" constant="80" id="c1z-UT-NwN"/>
                                 </constraints>
                             </imageView>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="slivki" translatesAutoresizingMaskIntoConstraints="NO" id="Fy4-OS-JNl">
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cheese" translatesAutoresizingMaskIntoConstraints="NO" id="Fy4-OS-JNl">
                                 <rect key="frame" x="235.66666666666663" y="498" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="0R5-o0-L1F"/>
@@ -871,8 +840,8 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="перетяните, чтобы добавить" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5T6-Ug-ZS5">
-                                <rect key="frame" x="73" y="294" width="229" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="74.666666666666686" y="294" width="226" height="21"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -931,7 +900,6 @@
                         <outlet property="egg" destination="cCL-kZ-e9y" id="YWq-vX-ClC"/>
                         <outlet property="findButton" destination="GHF-cX-loe" id="Jb0-Bv-o8b"/>
                         <outlet property="fish" destination="Ox2-Tl-5Z5" id="9Z8-Va-oeY"/>
-                        <outlet property="ingredientsTable" destination="5l8-VU-TrG" id="CXm-ff-srA"/>
                         <outlet property="luk" destination="pFN-6C-6N5" id="DLp-0o-ng6"/>
                         <outlet property="myProductsMask" destination="o8o-h1-wEq" id="QEv-ae-WpR"/>
                         <outlet property="myProductsText" destination="f13-gz-fTc" id="7VJ-lr-Kmx"/>
@@ -943,6 +911,7 @@
                         <outlet property="solt" destination="LPD-aH-2sG" id="ioc-N9-mN6"/>
                         <outlet property="sosyski" destination="Cer-bA-K2J" id="beo-31-XOn"/>
                         <outlet property="spagetty" destination="vwz-pC-dEA" id="bQA-2G-nDs"/>
+                        <outlet property="tutorText" destination="5T6-Ug-ZS5" id="MHI-1j-akl"/>
                         <outlet property="water" destination="Wdw-8e-PyW" id="31e-7G-iZ5"/>
                         <segue destination="XzY-oe-dlj" kind="show" identifier="toListSearchRecipes" id="Sbw-VW-YPo"/>
                     </connections>
@@ -954,25 +923,25 @@
     </scenes>
     <resources>
         <image name="Apply" width="25" height="25"/>
-        <image name="Beer" width="1024" height="684"/>
+        <image name="Beer" width="588.76251220703125" height="695.4381103515625"/>
         <image name="Category1" width="349" height="118"/>
-        <image name="Chicken" width="410.39999389648438" height="273.60000610351562"/>
+        <image name="Cheese" width="969" height="779"/>
+        <image name="Chicken" width="1280" height="1121"/>
         <image name="DeActiveDarkBeer" width="28" height="32"/>
-        <image name="Egg" width="1280" height="720"/>
-        <image name="Fish" width="276.48001098632812" height="207.36000061035156"/>
-        <image name="Luk" width="800" height="600"/>
+        <image name="Egg" width="1500" height="1033"/>
+        <image name="Fish" width="240" height="240"/>
+        <image name="Luk" width="3000" height="1950"/>
         <image name="Pause" width="12" height="18"/>
         <image name="Play" width="19" height="23"/>
         <image name="ReceptZagl" width="355" height="183"/>
         <image name="Search" width="23" height="23"/>
-        <image name="Solt" width="800" height="800"/>
-        <image name="Sosydg" width="1631" height="1080"/>
-        <image name="Spagetty" width="1920" height="1080"/>
-        <image name="Woter" width="2000" height="1333"/>
-        <image name="bacon" width="1600" height="1067"/>
+        <image name="Solt" width="1400" height="1877"/>
+        <image name="Sosydg" width="1000" height="662"/>
+        <image name="Spagetty" width="1594" height="1594"/>
+        <image name="Woter" width="1600" height="1402"/>
+        <image name="bacon" width="1200" height="710"/>
         <image name="iconsRec" width="110" height="110"/>
-        <image name="ris" width="1024" height="655"/>
-        <image name="slivki" width="207.83999633789062" height="138.47999572753906"/>
+        <image name="ris" width="1666" height="722"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Sbw-VW-YPo"/>

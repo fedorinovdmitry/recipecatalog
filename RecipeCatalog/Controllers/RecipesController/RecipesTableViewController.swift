@@ -41,9 +41,8 @@ class RecipesTableViewController: UIViewController {
         
         if isSearch == false {
             workwithFireBase()
-        }else {
-            findButton.isHidden = true
         }
+        findButton.isHidden = true
     }
     
     //MARK: - Private methods

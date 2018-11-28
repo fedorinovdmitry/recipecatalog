@@ -14,6 +14,7 @@
 		021C710C219D8DD700E5137C /* ColorShame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021C710B219D8DD700E5137C /* ColorShame.swift */; };
 		021C710F219DEDB400E5137C /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021C710E219DEDB400E5137C /* Font.swift */; };
 		021C7111219DEFCD00E5137C /* Calibri Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 021C7110219DEFCD00E5137C /* Calibri Italic.ttf */; };
+		02448F3221AEA24D0051FCE5 /* NeSmotritePlz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02448F3121AEA24D0051FCE5 /* NeSmotritePlz.swift */; };
 		024C1F662192F49A00C69999 /* RecipeMainConrollerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024C1F652192F49A00C69999 /* RecipeMainConrollerTableViewController.swift */; };
 		024C1F682192F4BA00C69999 /* ImageRecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024C1F672192F4BA00C69999 /* ImageRecipeTableViewCell.swift */; };
 		024C1F6A2192F4F500C69999 /* IngridientsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024C1F692192F4F500C69999 /* IngridientsTableViewCell.swift */; };
@@ -27,7 +28,6 @@
 		2D01129F21AC125C00B9722D /* SearchRecipeLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D01129E21AC125C00B9722D /* SearchRecipeLogic.swift */; };
 		2D0112A121AC264000B9722D /* EdditingArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0112A021AC264000B9722D /* EdditingArray.swift */; };
 		2D0112A421AD3D5400B9722D /* SearchRecipeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0112A321AD3D5400B9722D /* SearchRecipeController.swift */; };
-		2D0112A621AD3FF300B9722D /* SearchRecipeIngredientTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0112A521AD3FF300B9722D /* SearchRecipeIngredientTableCell.swift */; };
 		2D38BB9C21AABB3C006C0920 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D38BB9B21AABB3C006C0920 /* Step.swift */; };
 		2D98C7C8218734E50017E50A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D98C7C7218734E50017E50A /* AppDelegate.swift */; };
 		2D98C7CD218734E50017E50A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D98C7CB218734E50017E50A /* Main.storyboard */; };
@@ -91,6 +91,7 @@
 		021C710B219D8DD700E5137C /* ColorShame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorShame.swift; sourceTree = "<group>"; };
 		021C710E219DEDB400E5137C /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		021C7110219DEFCD00E5137C /* Calibri Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calibri Italic.ttf"; sourceTree = "<group>"; };
+		02448F3121AEA24D0051FCE5 /* NeSmotritePlz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeSmotritePlz.swift; sourceTree = "<group>"; };
 		024C1F652192F49A00C69999 /* RecipeMainConrollerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeMainConrollerTableViewController.swift; sourceTree = "<group>"; };
 		024C1F672192F4BA00C69999 /* ImageRecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRecipeTableViewCell.swift; sourceTree = "<group>"; };
 		024C1F692192F4F500C69999 /* IngridientsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngridientsTableViewCell.swift; sourceTree = "<group>"; };
@@ -105,7 +106,6 @@
 		2D01129E21AC125C00B9722D /* SearchRecipeLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRecipeLogic.swift; sourceTree = "<group>"; };
 		2D0112A021AC264000B9722D /* EdditingArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdditingArray.swift; sourceTree = "<group>"; };
 		2D0112A321AD3D5400B9722D /* SearchRecipeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRecipeController.swift; sourceTree = "<group>"; };
-		2D0112A521AD3FF300B9722D /* SearchRecipeIngredientTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRecipeIngredientTableCell.swift; sourceTree = "<group>"; };
 		2D38BB9B21AABB3C006C0920 /* Step.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
 		2D98C7C4218734E50017E50A /* RecipeCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D98C7C7218734E50017E50A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -200,6 +200,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		02448F3021AEA2160051FCE5 /* TutPusto */ = {
+			isa = PBXGroup;
+			children = (
+				02448F3121AEA24D0051FCE5 /* NeSmotritePlz.swift */,
+			);
+			path = TutPusto;
+			sourceTree = "<group>";
+		};
 		024C1F642192F44000C69999 /* RecipeMainController */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +241,7 @@
 		02945766218B0A2D00326796 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				02448F3021AEA2160051FCE5 /* TutPusto */,
 				02945767218B0A5E00326796 /* hexToColorExtension.swift */,
 				021C7104219AE54900E5137C /* UIButtonExtention.swift */,
 				2DD0E22221A42D5B00F1972F /* UIAlertControllerHelper.swift */,
@@ -254,7 +263,6 @@
 			isa = PBXGroup;
 			children = (
 				2D0112A321AD3D5400B9722D /* SearchRecipeController.swift */,
-				2D0112A521AD3FF300B9722D /* SearchRecipeIngredientTableCell.swift */,
 			);
 			path = SearchRecipeController;
 			sourceTree = "<group>";
@@ -685,10 +693,10 @@
 				2DD0E21A21A4293500F1972F /* AppCoordinator.swift in Sources */,
 				2DD0E22821A4363800F1972F /* FirstLaunchCoordinator.swift in Sources */,
 				024C1F662192F49A00C69999 /* RecipeMainConrollerTableViewController.swift in Sources */,
+				02448F3221AEA24D0051FCE5 /* NeSmotritePlz.swift in Sources */,
 				2DC5005F218764D100C661CC /* RequestsToFireBaseFactory.swift in Sources */,
 				021BC7BC21A406FC006F9A7E /* RecipeTitleTableViewCell.swift in Sources */,
 				2D01129F21AC125C00B9722D /* SearchRecipeLogic.swift in Sources */,
-				2D0112A621AD3FF300B9722D /* SearchRecipeIngredientTableCell.swift in Sources */,
 				021C710F219DEDB400E5137C /* Font.swift in Sources */,
 				2DD0E22D21A4371B00F1972F /* Constants.swift in Sources */,
 				2DD0E23721A46B5E00F1972F /* ModulesFactory.swift in Sources */,
@@ -903,6 +911,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = RecipeCatalog/Supporting/Settings/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -921,6 +930,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = RecipeCatalog/Supporting/Settings/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
